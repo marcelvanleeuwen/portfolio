@@ -1,0 +1,24 @@
+---
+title: "Proxmox Backup Server – Tip of the Day"
+publishedAt: "2026-07-29"
+updatedAt: "2024-07-29"
+author: "MvL"
+summary: "Proxmox Backup Server – Tip of the Day."
+image: "/images/blog/datastor.jpeg"
+---
+
+![datastor](/images/blog/datastor.jpeg)
+
+# Proxmox Backup Server – Tip of the Day
+
+Today I wanted to remove a datastore from my Proxmox Backup Server. I searched through the web interface but couldn’t find a remove option anywhere.
+
+After a bit of searching, I discovered that in the latest versions of Proxmox Backup Server, you can remove the datastore configuration from the `Menu` --> `Administration` --> `Shell` with the following command:
+
+```bash
+proxmox-backup-manager datastore remove nvme_4TB
+```
+
+This command removes the datastore from the PBS configuration.
+
+It took me a while to find, so I hope this tip saves someone else some time.
