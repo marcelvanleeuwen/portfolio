@@ -75,7 +75,7 @@ const __TURBOPACK__default__export__ = [
         "updatedAt": "2026-08-04",
         "author": "MvL",
         "summary": "54 Today.",
-        "image": "",
+        "image": "/images/blog/pie.jpeg",
         "content": "![pie](/images/blog/pie.jpeg)\n\n# 54 Today\n\nI turned 54. It feels like time moves faster every year. When I was younger, a year seemed to last forever. Now it feels like I blink, and another birthday is here.\n\nI have never been someone who needs a big birthday celebration. For me, it is more about enjoying a piece of pie, having good conversations, and spending time with the people who matter.\n\nI do not have a large circle of friends in real life, and I am perfectly happy with that. I would rather have a few people with whom I have a real and meaningful connection than many people who are only around sometimes.\n\nAt the same time, I really appreciate the people I have met online. I enjoy connecting with people who share the same interests, especially around IT, technology and homelabbing. I am grateful for everyone who follows my journey and for the conversations and connections along the way.\n\nMany people think being healthy is normal, until one day it is not. I have been living with a serious illness for a long time, and because of that, life can sometimes be challenging.\n\nNot every illness is visible from the outside, and unfortunately, that also means I do not always get the understanding I would hope for. People cannot always see what someone is dealing with or how much energy everyday things can sometimes take.\n\nLiving with this illness has taught me that good health is never something we should take for granted. It has also taught me to appreciate the smaller things in life even more.\n\nSo, 54 it is.\n\nAnother year older, hopefully a little wiser, and most importantly: still enjoying the journey.\n\nAnd yes, there was apple pie. 🎂",
         "_meta": {
             "filePath": "54-today.mdx",
@@ -92,7 +92,7 @@ const __TURBOPACK__default__export__ = [
         "updatedAt": "2026-08-01",
         "author": "MvL",
         "summary": "A big box arrived today.",
-        "image": "",
+        "image": "/images/blog/unas-2u.png",
         "content": "![unas-2u](/images/blog/unas-2u.png)\n\n# A big box arrived today…\n\nMy new Ubiquiti Inc. UniFi UPS 2U is finally here!\n\nI’m currently rebuilding my server rack and upgrading some of the hardware. It’s always fun to spend time working on something you’re passionate about.\n\nThe old CyberPower UPS will be going up for sale soon, as it’s time for an upgrade.\n\nUniFi hardware has been a pleasure to work with. Everything fits together nicely, and it makes managing my homelab much easier.\n\nI’ll share another photo once the rack rebuild is a bit further along. Stay tuned!",
         "_meta": {
             "filePath": "a-big-box-arrived-today.mdx",
@@ -109,7 +109,7 @@ const __TURBOPACK__default__export__ = [
         "updatedAt": "2026-05-13",
         "author": "MvL",
         "summary": "The MINISFORUM S7—fast NVMe storage for my Proxmox homelab.",
-        "image": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=192&fit=crop",
+        "image": "/images/blog/s7.png",
         "content": "![minisforum-nas](/images/blog/s7.png)\n\n# Dear MINISFORUM,\n\nI’ve been a big fan of MINISFORUM ever since I started using the MINISFORUM MS-01 in my Proxmox VE cluster.\n\nThe MS-01 has been a great platform for virtualization and homelab projects, especially because of the 2x SFP+ 10Gb ports. High-speed networking makes a huge difference when working with virtual machines, containers, and storage traffic.\n\nNow MINISFORUM is introducing the new MINISFORUM S7 all-flash NVMe NAS, and I’m really excited about it. What immediately caught my attention is that it also includes 2x SFP+ 10Gb connections. This opens the door for very fast shared NVMe storage in combination with my Proxmox cluster.\n\nI’m seriously considering moving toward shared all-flash NVMe storage for better VM performance, faster migrations, and a more powerful homelab setup overall.\n\nIt’s great to see compact hardware becoming this powerful and network-focused.",
         "_meta": {
             "filePath": "dear-minisforum.mdx",
@@ -160,7 +160,7 @@ const __TURBOPACK__default__export__ = [
         "updatedAt": "2026-06-20",
         "author": "MvL",
         "summary": "From ClarkConnect to Kubernetes: My Homelab Challenge.",
-        "image": "",
+        "image": "/images/blog/clarkconnect.jpeg",
         "content": "![clarkconnect-logo](/images/blog/clarkconnect.jpeg)\n\n# From ClarkConnect to Kubernetes: My Homelab Challenge\n\nI’m currently learning Kubernetes, and I have to say: it’s definitely next level technology!\n\nThere is a lot to learn, but that’s exactly what makes it such an interesting challenge. I think Kubernetes is a beautiful technology, especially because it is so closely connected to Linux.\n\nI already have some Linux experience from my homelab hobby. Many years ago, I first came into contact with a Linux distribution called ClarkConnect. That was where I learned a lot about Linux, networking, firewalls, and server management.\n\nAt the moment, I have a small bare-metal Kubernetes cluster running on two virtual machines: one Control Plane and one Worker node. As part of my learning journey, I also created a step-by-step guide on GitHub that explains how to install Kubernetes bare metal on Ubuntu Server 26.04.\n\nhttps://github.com/marcelvanleeuwen/kubernetes-documentation\n\nMy ultimate goal is to migrate my existing LXC containers to Kubernetes and gain more experience with cloud-native technologies along the way.\n\nThe learning curve is steep, but that is what makes it fun. 🚀",
         "_meta": {
             "filePath": "from-clarkconnect-to-kubernetes-my-homelab-challenge.mdx",
@@ -313,7 +313,7 @@ const __TURBOPACK__default__export__ = [
         "updatedAt": "2026-08-22",
         "author": "MvL",
         "summary": "Should I Switch to Linux?.",
-        "image": "",
+        "image": "images/blog/linux.png",
         "content": "![linux-logo](/images/blog/linux.png)\n\n# Should I Switch to Linux?\n\nSome people may think that I already use Linux on my laptop. However, that is not the case.\n\nI have been using macOS since 2013. Before that, I used Windows, but Windows 8 with all its tiles was not for me. In my opinion, Microsoft was moving in the wrong direction, so I switched to macOS.\n\nSince then, I have been a happy macOS user. I am also quite invested in the Apple ecosystem, which makes switching more difficult.\n\nLately, I have been reading more and more articles suggesting that this could finally be “the year of Linux on the desktop.” But people have been saying that for years, so I am still not completely convinced.\n\nI already use Linux in my server environment, and I absolutely love it there. It is stable, reliable, and gives me a lot of control. For servers, Linux is my first choice.\n\nI have experimented with Linux on desktops and laptops before, but only for a short time and that was many, many years ago. Unfortunately, it was not a successful experience. That is one of the reasons why I still have doubts about using Linux as my daily desktop operating system.\n\nBut Linux has improved a lot since then. Could it now offer the same comfortable experience as macOS for my daily work?\n\nSo, I have a question for my network:\n\nShould I start experimenting with Linux on a laptop again? If so, which Linux distribution would you recommend: Ubuntu or Fedora? Or should I simply stay with macOS?\n\nI would love to hear about your experiences.",
         "_meta": {
             "filePath": "should-I-switch-to-linux.mdx",
@@ -347,7 +347,7 @@ const __TURBOPACK__default__export__ = [
 "use strict";
 
 __turbopack_context__.s([]);
-// generated by content-collections at Sat Sep 26 2026 09:23:14 GMT+0200 (Central European Summer Time)
+// generated by content-collections at Sun Sep 27 2026 12:09:52 GMT+0200 (Central European Summer Time)
 var __TURBOPACK__imported__module__$5b$project$5d2f2e$content$2d$collections$2f$generated$2f$allPosts$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/.content-collections/generated/allPosts.js [app-rsc] (ecmascript)");
 ;
 ;

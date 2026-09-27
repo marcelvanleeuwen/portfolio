@@ -1,3 +1,4 @@
 {
+  "/homelab/page": "app/homelab/page.js",
   "/page": "app/page.js"
 }

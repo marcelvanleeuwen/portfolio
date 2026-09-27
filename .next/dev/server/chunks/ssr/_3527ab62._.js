@@ -1676,7 +1676,7 @@ const DATA = {
             },
             Youtube: {
                 name: "Youtube",
-                url: "https://dub.sh/dillion-youtube",
+                url: "https://www.youtube.com/@thehomelabber_io",
                 icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Icons"].youtube,
                 navbar: true
             },
