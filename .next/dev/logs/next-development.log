@@ -1,5 +1,1 @@
-[00:00:01.474] Server  LOG     ✓ Ready in 1302ms
-[00:00:15.722] Browser WARN    Image with src "/images/homelab/homelab_version_2026.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:09:18.961] Browser WARN    Image with src "/images/homelab/homelab_version_2026.jpeg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:00.855] Server  LOG     ✓ Ready in 673ms
