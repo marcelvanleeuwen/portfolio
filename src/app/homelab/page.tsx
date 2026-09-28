@@ -7,7 +7,7 @@ export default function HomelabPage() {
 
       <figure className="pb-10">
         <Image
-            src="/images/homelab/homelab_version_2026.jpeg"
+            src="/images/homelab/homelab_version_2026.jpg"
             alt="current homelab"
             width={1200}
             height={800}
@@ -45,10 +45,10 @@ export default function HomelabPage() {
 
         <div className="grid grid-cols-2 gap-4">
         {[
-        { src: "/images/homelab/homelab_version_2024.jpeg", alt: "homelab 2024" },
-        { src: "/images/homelab/homelab_version_2009.jpeg", alt: "homelab 2009" },
-        { src: "/images/homelab/homelab_version_2011.jpeg", alt: "homelab 2011" },
-        { src: "/images/homelab/homelab_version_2017.jpeg", alt: "homelab 2017" },
+        { src: "/images/homelab/homelab_version_2024.jpg", alt: "homelab 2024" },
+        { src: "/images/homelab/homelab_version_2009.jpg", alt: "homelab 2009" },
+        { src: "/images/homelab/homelab_version_2011.jpg", alt: "homelab 2011" },
+        { src: "/images/homelab/homelab_version_2017.jpg", alt: "homelab 2017" },
         ].map((foto) => (
           <figure key={foto.src} className="space-y-2">
             <div className="relative aspect-square overflow-hidden rounded-xl">
