@@ -77,7 +77,7 @@ export const DATA = {
         name: "Youtube",
         url: "https://www.youtube.com/@thehomelabber_io",
         icon: Icons.youtube,
-        navbar: false,
+        navbar: true,
       },
       email: {
         name: "Send Email",
