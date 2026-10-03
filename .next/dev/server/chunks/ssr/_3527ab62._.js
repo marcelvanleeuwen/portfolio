@@ -1579,15 +1579,29 @@ const DATA = {
     location: "Ede, Netherlands",
     locationLink: "https://www.google.com/maps/place/Ede",
     description: "I’m passionate about networking, Linux, virtualization, and automation. Through this website, I share my knowledge, projects, and experiences to help others and document my own journey.",
-    summary: `I have been passionate about computers, servers, and networking since a young age. Now 54, I bring many years of hands-on experience across a wide range of platforms and systems, including Windows, Linux, macOS, iOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
+    summary: `I have been passionate about computers, servers, and networking since a young age. Now 54, I bring many years of hands-on experience across a wide range of platforms and systems.
 
-  I enjoy working with virtualization, container technology, network management, and storage solutions. That’s why I take great pleasure in building my production homelab, setting up Proxmox environments, and running and managing containers and virtual machines.
+I have been passionate about computers, servers, and networking from a young age. Now 54, I have many years of hands-on experience with different platforms and systems, including Windows, Linux, macOS, iOS, iPadOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
 
-  I run several projects in production, such as Flux, a decentralized cloud solution, and Presearch, a privacy-focused search engine.
+I enjoy working with virtualization, containers, networking, and storage. This is also why I enjoy building and improving my production homelab, where I use Proxmox and run different containers and virtual machines.
 
-  Over the past few months, I’ve been learning how to use Kubernetes in my production homelab. I’ve always been fascinated by container technologies.
+Over the years, I have used Docker a lot for running containers and applications. Kubernetes is another technology that has been on my list to learn. Over the past few months, I have started learning how Kubernetes works and how I can use it in my production homelab.
 
-  I am also considering making a career switch and turning my hobby into my profession. In April and May 2025, I completed an internship at RotaForm in the Infrastructure and Management department. This experience was very rewarding, and I really enjoyed working with people who share the same passion for IT. For me, IT is more than just a hobby; it is a passion and a constant source of learning, experimenting, and improving.`,
+I have also been involved in several projects. One of them is Flux, a decentralized cloud computing platform. Flux is an alternative to traditional cloud services, where applications normally run in large data centers owned by companies such as Amazon, Microsoft, or Google.
+
+The Flux network works differently. It is powered by thousands of independent servers, called FluxNodes, located around the world. These nodes provide computing power, storage, and network resources that can be used to run applications and other services. Applications can run on multiple nodes, which helps to keep them available if one of the servers goes offline.
+
+I have been running FluxNodes for several years and contribute my own server resources to the network. This is one of the projects that made me even more interested in servers, decentralized infrastructure, containers, and cloud technology.
+
+Another project I was involved with was Presearch, a privacy-focused decentralized search engine. I ran several Presearch nodes and contributed server resources to its network. Unfortunately, Presearch ran into serious financial problems and the project came to an end in 2026.
+
+A new project I am following is NēshaTruth. Although one of its developers previously worked on Presearch, NēshaTruth has no connection with Presearch and has been built from the ground up as a completely new project. It runs on the Flux decentralized cloud network, which makes it especially interesting to me because I already have experience running Flux nodes. I am curious to see how NēshaTruth develops in the future
+
+I always enjoy learning new technologies and trying new things. AI is a good example of this. It is a very interesting technology, and it is developing incredibly fast. I enjoy learning more about it, experimenting with it, and discovering how it can be useful in both IT and everyday work.
+
+I am also considering making a career switch and turning my hobby into my profession. In April and May 2025, I completed an internship at RotaForm in the Infrastructure and Management department. This experience was very rewarding, and I really enjoyed working with people who share the same passion for IT.
+
+For me, IT is more than just a hobby. It is a passion and a constant source of learning, experimenting, and improving.`,
     avatarUrl: "/images/about/me.jpeg",
     skills: [
         {
@@ -1678,7 +1692,7 @@ const DATA = {
                 name: "Youtube",
                 url: "https://www.youtube.com/@thehomelabber_io",
                 icon: __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Icons"].youtube,
-                navbar: false
+                navbar: true
             },
             email: {
                 name: "Send Email",
@@ -1815,7 +1829,7 @@ const DATA = {
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 222,
+                        lineNumber: 237,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1847,7 +1861,7 @@ const DATA = {
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 250,
+                        lineNumber: 265,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 },
@@ -1858,7 +1872,7 @@ const DATA = {
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 255,
+                        lineNumber: 270,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1891,7 +1905,7 @@ const DATA = {
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 283,
+                        lineNumber: 298,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 },
@@ -1902,7 +1916,7 @@ const DATA = {
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 288,
+                        lineNumber: 303,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1935,7 +1949,7 @@ const DATA = {
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 316,
+                        lineNumber: 331,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1985,7 +1999,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 369,
+                        lineNumber: 384,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/cryptotrends/cryptotrends"
@@ -2007,7 +2021,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 387,
+                        lineNumber: 402,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://devpost.com/software/my6footprint"
@@ -2018,7 +2032,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 392,
+                        lineNumber: 407,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/Wallet6/my6footprint-machine-learning"
@@ -2029,7 +2043,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 397,
+                        lineNumber: 412,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/Wallet6/CarbonWallet"
@@ -2040,7 +2054,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 402,
+                        lineNumber: 417,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/Wallet6/wallet6-server"
@@ -2060,7 +2074,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 418,
+                        lineNumber: 433,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/ethdocnet"
@@ -2081,7 +2095,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 435,
+                        lineNumber: 450,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/justinmichaud/htn2017"
@@ -2092,7 +2106,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 440,
+                        lineNumber: 455,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/RTSPClient"
@@ -2113,7 +2127,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 457,
+                        lineNumber: 472,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/ShareShip/ShareShip"
@@ -2124,7 +2138,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 462,
+                        lineNumber: 477,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://share-ship.herokuapp.com/"
@@ -2144,7 +2158,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 478,
+                        lineNumber: 493,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/nsagirlfriend/nsagirlfriend"
@@ -2165,7 +2179,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 495,
+                        lineNumber: 510,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://syncedreview.com/2017/06/26/global-ai-hackathon-in-toronto/"
@@ -2176,7 +2190,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 500,
+                        lineNumber: 515,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/TinySamosas/"
@@ -2205,7 +2219,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 527,
+                        lineNumber: 542,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/genecis"
@@ -2226,7 +2240,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 543,
+                        lineNumber: 558,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://medium.com/make-school/the-winners-of-make-schools-student-app-competition-2017-a6b0e72f190a"
@@ -2237,7 +2251,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 548,
+                        lineNumber: 563,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://devpost.com/software/pocketdoc-react-native"
@@ -2248,7 +2262,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 553,
+                        lineNumber: 568,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://www.youtube.com/watch?v=XwFdn5Rmx68"
@@ -2259,7 +2273,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 558,
+                        lineNumber: 573,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/pocketdoc-react-native"
@@ -2287,7 +2301,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 583,
+                        lineNumber: 598,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://devpost.com/software/pocketdoc-react-native"
@@ -2298,7 +2312,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 588,
+                        lineNumber: 603,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://www.youtube.com/watch?v=XwFdn5Rmx68"
@@ -2309,7 +2323,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 593,
+                        lineNumber: 608,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/pocketdoc-react-native"
@@ -2329,7 +2343,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 609,
+                        lineNumber: 624,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/earthwatch"
@@ -2350,7 +2364,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 626,
+                        lineNumber: 641,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/threejs-planes"
@@ -2372,7 +2386,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 644,
+                        lineNumber: 659,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/mattBlackDesign/recipic-ionic"
@@ -2383,7 +2397,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 649,
+                        lineNumber: 664,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/mattBlackDesign/recipic-rails"
@@ -2404,7 +2418,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 666,
+                        lineNumber: 681,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/human-huntr-react-native"
@@ -2415,7 +2429,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 671,
+                        lineNumber: 686,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/mattBlackDesign/human-huntr-rails"
@@ -2435,7 +2449,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 687,
+                        lineNumber: 702,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/justinmichaud/TerribleHacks2016-Windows11"
@@ -2455,7 +2469,7 @@ const DATA = {
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 703,
+                        lineNumber: 718,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/UWPortalSDK/crowmark"
