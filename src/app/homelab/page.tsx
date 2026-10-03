@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function HomelabPage() {
   return (
-    <main className="mx-auto max-w-2xl space-y-6">
+    <main className="mx-auto max-w-4xl space-y-6">
       <h1 className="text-3xl font-bold pb-10">My Homelab Through the Years</h1>
 
       <figure className="pb-10">
