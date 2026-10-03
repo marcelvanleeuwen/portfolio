@@ -20,15 +20,30 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/Ede",
   description:
     "I’m passionate about networking, Linux, virtualization, and automation. Through this website, I share my knowledge, projects, and experiences to help others and document my own journey.",
-  summary: `I have been passionate about computers, servers, and networking since a young age. Now 54, I bring many years of hands-on experience across a wide range of platforms and systems, including Windows, Linux, macOS, iOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
+    summary: `I have been passionate about computers, servers, and networking since a young age. Now 54, I bring many years of hands-on experience across a wide range of platforms and systems.
 
-  I enjoy working with virtualization, container technology, network management, and storage solutions. That’s why I take great pleasure in building my production homelab, setting up Proxmox environments, and running and managing containers and virtual machines.
+I have been passionate about computers, servers, and networking from a young age. Now 54, I have many years of hands-on experience with different platforms and systems, including Windows, Linux, macOS, iOS, iPadOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
 
-  I run several projects in production, such as Flux, a decentralized cloud solution, and Presearch, a privacy-focused search engine.
+I enjoy working with virtualization, containers, networking, and storage. This is also why I enjoy building and improving my production homelab, where I use Proxmox and run different containers and virtual machines.
 
-  Over the past few months, I’ve been learning how to use Kubernetes in my production homelab. I’ve always been fascinated by container technologies.
+Over the years, I have used Docker a lot for running containers and applications. Kubernetes is another technology that has been on my list to learn. Over the past few months, I have started learning how Kubernetes works and how I can use it in my production homelab.
 
-  I am also considering making a career switch and turning my hobby into my profession. In April and May 2025, I completed an internship at RotaForm in the Infrastructure and Management department. This experience was very rewarding, and I really enjoyed working with people who share the same passion for IT. For me, IT is more than just a hobby; it is a passion and a constant source of learning, experimenting, and improving.`,
+I have also been involved in several projects. One of them is Flux, a decentralized cloud computing platform. Flux is an alternative to traditional cloud services, where applications normally run in large data centers owned by companies such as Amazon, Microsoft, or Google.
+
+The Flux network works differently. It is powered by thousands of independent servers, called FluxNodes, located around the world. These nodes provide computing power, storage, and network resources that can be used to run applications and other services. Applications can run on multiple nodes, which helps to keep them available if one of the servers goes offline.
+
+I have been running FluxNodes for several years and contribute my own server resources to the network. This is one of the projects that made me even more interested in servers, decentralized infrastructure, containers, and cloud technology.
+
+Another project I was involved with was Presearch, a privacy-focused decentralized search engine. I ran several Presearch nodes and contributed server resources to its network. Unfortunately, Presearch ran into serious financial problems and the project came to an end in 2026.
+
+A new project I am following is NēshaTruth. Although one of its developers previously worked on Presearch, NēshaTruth has no connection with Presearch and has been built from the ground up as a completely new project. It runs on the Flux decentralized cloud network, which makes it especially interesting to me because I already have experience running Flux nodes. I am curious to see how NēshaTruth develops in the future
+
+I always enjoy learning new technologies and trying new things. AI is a good example of this. It is a very interesting technology, and it is developing incredibly fast. I enjoy learning more about it, experimenting with it, and discovering how it can be useful in both IT and everyday work.
+
+I am also considering making a career switch and turning my hobby into my profession. In April and May 2025, I completed an internship at RotaForm in the Infrastructure and Management department. This experience was very rewarding, and I really enjoyed working with people who share the same passion for IT.
+
+For me, IT is more than just a hobby. It is a passion and a constant source of learning, experimenting, and improving.`,
+  
   avatarUrl: "/images/about/me.jpeg",
   skills: [
     { name: "React", icon: ReactLight },
