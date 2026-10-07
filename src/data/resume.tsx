@@ -18,11 +18,8 @@ export const DATA = {
     url: "https://thehomelabber.io",
   location: "Ede, Netherlands",
   locationLink: "https://www.google.com/maps/place/Ede",
-  description:
-    "I’m passionate about networking, Linux, virtualization, and automation. Through this website, I share my knowledge, projects, and experiences to help others and document my own journey.",
-    summary: `I have been passionate about computers, servers, and networking since a young age. Now 54, I bring many years of hands-on experience across a wide range of platforms and systems.
-
-I have been passionate about computers, servers, and networking from a young age. Now 54, I have many years of hands-on experience with different platforms and systems, including Windows, Linux, macOS, iOS, iPadOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
+  description: "I’m passionate about networking, Linux, virtualization, and automation. Through this website, I share my knowledge, projects, and experiences to help others and document my own journey.",
+  summary: `I have been passionate about computers, servers, and networking from a young age. Now 54, I have many years of hands-on experience with different platforms and systems, including Windows, Linux, macOS, iOS, iPadOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
 
 I enjoy working with virtualization, containers, networking, and storage. This is also why I enjoy building and improving my production homelab, where I use Proxmox and run different containers and virtual machines.
 
