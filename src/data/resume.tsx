@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, Server } from "lucide-react";
+import { BookOpenIcon, HomeIcon, NotebookIcon, Server } from "lucide-react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
 import { Typescript } from "@/components/ui/svgs/typescript";
@@ -58,6 +58,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/knowledge", icon: BookOpenIcon, label: "Knowledge" },
     { href: "/homelab", icon: Server, label: "Homelab" },
   ],
   contact: {

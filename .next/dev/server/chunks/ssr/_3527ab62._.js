@@ -1544,6 +1544,7 @@ __turbopack_context__.s([
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$1$2e$1_$40$babel$2b$core$40$7$2e$28$2e$5_react$2d$dom$40$19$2e$2$2e$3_react$40$19$2e$2$2e$3_$5f$react$40$19$2e$2$2e$3$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/next@16.1.1_@babel+core@7.28.5_react-dom@19.2.3_react@19.2.3__react@19.2.3/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$icons$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/icons.tsx [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$562$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpenIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.562.0_react@19.2.3/node_modules/lucide-react/dist/esm/icons/book-open.js [app-rsc] (ecmascript) <export default as BookOpenIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$562$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__HomeIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.562.0_react@19.2.3/node_modules/lucide-react/dist/esm/icons/house.js [app-rsc] (ecmascript) <export default as HomeIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$562$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$notebook$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__NotebookIcon$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.562.0_react@19.2.3/node_modules/lucide-react/dist/esm/icons/notebook.js [app-rsc] (ecmascript) <export default as NotebookIcon>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$562$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__Server$3e$__ = __turbopack_context__.i("[project]/node_modules/.pnpm/lucide-react@0.562.0_react@19.2.3/node_modules/lucide-react/dist/esm/icons/server.js [app-rsc] (ecmascript) <export default as Server>");
@@ -1579,9 +1580,7 @@ const DATA = {
     location: "Ede, Netherlands",
     locationLink: "https://www.google.com/maps/place/Ede",
     description: "I’m passionate about networking, Linux, virtualization, and automation. Through this website, I share my knowledge, projects, and experiences to help others and document my own journey.",
-    summary: `I have been passionate about computers, servers, and networking since a young age. Now 54, I bring many years of hands-on experience across a wide range of platforms and systems.
-
-I have been passionate about computers, servers, and networking from a young age. Now 54, I have many years of hands-on experience with different platforms and systems, including Windows, Linux, macOS, iOS, iPadOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
+    summary: `I have been passionate about computers, servers, and networking from a young age. Now 54, I have many years of hands-on experience with different platforms and systems, including Windows, Linux, macOS, iOS, iPadOS, Android, Synology DSM, SRM, and Ubiquiti UniFi.
 
 I enjoy working with virtualization, containers, networking, and storage. This is also why I enjoy building and improving my production homelab, where I use Proxmox and run different containers and virtual machines.
 
@@ -1659,6 +1658,11 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
             href: "/blog",
             icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$562$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$notebook$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__NotebookIcon$3e$__["NotebookIcon"],
             label: "Blog"
+        },
+        {
+            href: "/knowledge",
+            icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$562$2e$0_react$40$19$2e$2$2e$3$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$book$2d$open$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__BookOpenIcon$3e$__["BookOpenIcon"],
+            label: "Knowledge"
         },
         {
             href: "/homelab",
@@ -1829,7 +1833,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 237,
+                        lineNumber: 235,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1861,7 +1865,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 265,
+                        lineNumber: 263,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 },
@@ -1872,7 +1876,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 270,
+                        lineNumber: 268,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1905,7 +1909,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 298,
+                        lineNumber: 296,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 },
@@ -1916,7 +1920,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 303,
+                        lineNumber: 301,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1949,7 +1953,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "size-3"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 331,
+                        lineNumber: 329,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0))
                 }
@@ -1999,7 +2003,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 384,
+                        lineNumber: 382,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/cryptotrends/cryptotrends"
@@ -2021,7 +2025,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 402,
+                        lineNumber: 400,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://devpost.com/software/my6footprint"
@@ -2032,7 +2036,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 407,
+                        lineNumber: 405,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/Wallet6/my6footprint-machine-learning"
@@ -2043,7 +2047,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 412,
+                        lineNumber: 410,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/Wallet6/CarbonWallet"
@@ -2054,7 +2058,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 417,
+                        lineNumber: 415,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/Wallet6/wallet6-server"
@@ -2074,7 +2078,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 433,
+                        lineNumber: 431,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/ethdocnet"
@@ -2095,7 +2099,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 450,
+                        lineNumber: 448,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/justinmichaud/htn2017"
@@ -2106,7 +2110,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 455,
+                        lineNumber: 453,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/RTSPClient"
@@ -2127,7 +2131,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 472,
+                        lineNumber: 470,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/ShareShip/ShareShip"
@@ -2138,7 +2142,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 477,
+                        lineNumber: 475,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://share-ship.herokuapp.com/"
@@ -2158,7 +2162,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 493,
+                        lineNumber: 491,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/nsagirlfriend/nsagirlfriend"
@@ -2179,7 +2183,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 510,
+                        lineNumber: 508,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://syncedreview.com/2017/06/26/global-ai-hackathon-in-toronto/"
@@ -2190,7 +2194,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 515,
+                        lineNumber: 513,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/TinySamosas/"
@@ -2219,7 +2223,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 542,
+                        lineNumber: 540,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/genecis"
@@ -2240,7 +2244,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 558,
+                        lineNumber: 556,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://medium.com/make-school/the-winners-of-make-schools-student-app-competition-2017-a6b0e72f190a"
@@ -2251,7 +2255,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 563,
+                        lineNumber: 561,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://devpost.com/software/pocketdoc-react-native"
@@ -2262,7 +2266,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 568,
+                        lineNumber: 566,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://www.youtube.com/watch?v=XwFdn5Rmx68"
@@ -2273,7 +2277,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 573,
+                        lineNumber: 571,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/pocketdoc-react-native"
@@ -2301,7 +2305,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 598,
+                        lineNumber: 596,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://devpost.com/software/pocketdoc-react-native"
@@ -2312,7 +2316,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 603,
+                        lineNumber: 601,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://www.youtube.com/watch?v=XwFdn5Rmx68"
@@ -2323,7 +2327,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 608,
+                        lineNumber: 606,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/pocketdoc-react-native"
@@ -2343,7 +2347,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 624,
+                        lineNumber: 622,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/earthwatch"
@@ -2364,7 +2368,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 641,
+                        lineNumber: 639,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/threejs-planes"
@@ -2386,7 +2390,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 659,
+                        lineNumber: 657,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/mattBlackDesign/recipic-ionic"
@@ -2397,7 +2401,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 664,
+                        lineNumber: 662,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/mattBlackDesign/recipic-rails"
@@ -2418,7 +2422,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 681,
+                        lineNumber: 679,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/dillionverma/human-huntr-react-native"
@@ -2429,7 +2433,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 686,
+                        lineNumber: 684,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/mattBlackDesign/human-huntr-rails"
@@ -2449,7 +2453,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 702,
+                        lineNumber: 700,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/justinmichaud/TerribleHacks2016-Windows11"
@@ -2469,7 +2473,7 @@ For me, IT is more than just a hobby. It is a passion and a constant source of l
                         className: "h-4 w-4"
                     }, void 0, false, {
                         fileName: "[project]/src/data/resume.tsx",
-                        lineNumber: 718,
+                        lineNumber: 716,
                         columnNumber: 17
                     }, ("TURBOPACK compile-time value", void 0)),
                     href: "https://github.com/UWPortalSDK/crowmark"

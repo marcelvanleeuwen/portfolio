@@ -54,8 +54,29 @@ var posts = defineCollection({
     };
   }
 });
+var knowledge = defineCollection({
+  name: "knowledge",
+  directory: "knowledge",
+  include: "*.mdx",
+  schema: z.object({
+    title: z.string(),
+    summary: z.string(),
+    category: z.string(),
+    updatedAt: z.iso.date(),
+    content: z.string()
+  }),
+  transform: async (document, context) => {
+    const mdx = await compileMDX(context, document, {
+      remarkPlugins: [remarkGfm, remarkCodeMeta]
+    });
+    return {
+      ...document,
+      mdx
+    };
+  }
+});
 var content_collections_default = defineConfig({
-  collections: [posts]
+  collections: [posts, knowledge]
 });
 export {
   content_collections_default as default

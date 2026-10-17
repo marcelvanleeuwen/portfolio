@@ -1,1 +1,23 @@
-[00:00:00.607] Server  LOG     ✓ Ready in 461ms
+[00:00:00.797] Server  LOG     ✓ Ready in 673ms
+[00:00:12.921] Server  ERROR   Expected style "zIndex: 2px" to be unitless
+[00:00:12.922] Server  ERROR   Expected style "zIndex: 1px" to be unitless
+[00:01:39.381] Browser WARN    Image with src "/images/homelab/homelab_version_2026.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:06:04.221] Server  LOG     ✓ Compiled in 115ms
+[00:06:48.667] Server  LOG     ✓ Compiled in 39ms
+[00:15:09.709] Server  LOG     ... error "Failed to reload configuration: Error: configuration file content-collections.ts is invalid: Error: Build failed with 2 errors:\ncontent-collections.ts:31:6: ERROR: The symbol \"posts\" has already been declared\ncontent-collections.ts:45:7: ERROR: Multiple exports with the same name \"default\""
+[00:16:42.926] Server  LOG     ... config changed
+[00:16:42.926] Server  LOG     build started ...
+[00:16:43.130] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "204ms"
+[00:16:43.179] Server  LOG     ✓ Compiled in 39ms
+[00:17:49.129] Server  LOG     ... config changed
+[00:17:49.129] Server  LOG     build started ...
+[00:17:49.139] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "10ms"
+[00:17:49.195] Server  LOG     ✓ Compiled in 16ms
+[00:19:58.045] Server  LOG     ✓ Compiled in 51ms
+[00:20:24.138] Server  LOG     ✓ Compiled in 68ms
+[00:22:03.607] Server  LOG     ✓ Compiled in 142ms
+[00:22:04.763] Browser ERROR   uncaughtError: Error: An unexpected Turbopack error occurred. Please see the output of `next dev` for more details.
+[00:23:11.337] Server  LOG     ... file "knowledge/about-this-wiki.mdx" "changed"
+[00:23:11.337] Server  LOG     build started ...
+[00:23:11.369] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "32ms"

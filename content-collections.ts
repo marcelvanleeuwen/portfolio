@@ -28,7 +28,30 @@ const posts = defineCollection({
     },
 });
 
+const knowledge = defineCollection({
+    name: "knowledge",
+    directory: "knowledge",
+    include: "*.mdx",
+    schema: z.object({
+        title: z.string(),
+        summary: z.string(),
+        category: z.string(),
+        updatedAt: z.iso.date(),
+        content: z.string(),
+    }),
+    transform: async (document, context) => {
+        const mdx = await compileMDX(context, document, {
+            remarkPlugins: [remarkGfm, remarkCodeMeta],
+        });
+
+        return {
+            ...document,
+            mdx,
+        };
+    },
+});
+
 export default defineConfig({
-    collections: [posts],
+    collections: [posts, knowledge],
 });
 
