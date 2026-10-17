@@ -6,6 +6,7 @@ export default [
     "updatedAt": "2026-08-04",
     "author": "MvL",
     "summary": "54 Today.",
+    "category": "Personal",
     "image": "/images/blog/pie.jpeg",
     "content": "![pie](/images/blog/pie.jpeg)\n\n# 54 Today\n\nI turned 54. It feels like time moves faster every year. When I was younger, a year seemed to last forever. Now it feels like I blink, and another birthday is here.\n\nI have never been someone who needs a big birthday celebration. For me, it is more about enjoying a piece of pie, having good conversations, and spending time with the people who matter.\n\nI do not have a large circle of friends in real life, and I am perfectly happy with that. I would rather have a few people with whom I have a real and meaningful connection than many people who are only around sometimes.\n\nAt the same time, I really appreciate the people I have met online. I enjoy connecting with people who share the same interests, especially around IT, technology and homelabbing. I am grateful for everyone who follows my journey and for the conversations and connections along the way.\n\nMany people think being healthy is normal, until one day it is not. I have been living with a serious illness for a long time, and because of that, life can sometimes be challenging.\n\nNot every illness is visible from the outside, and unfortunately, that also means I do not always get the understanding I would hope for. People cannot always see what someone is dealing with or how much energy everyday things can sometimes take.\n\nLiving with this illness has taught me that good health is never something we should take for granted. It has also taught me to appreciate the smaller things in life even more.\n\nSo, 54 it is.\n\nAnother year older, hopefully a little wiser, and most importantly: still enjoying the journey.\n\nAnd yes, there was apple pie. 🎂",
     "_meta": {
@@ -23,6 +24,7 @@ export default [
     "updatedAt": "2026-08-01",
     "author": "MvL",
     "summary": "A big box arrived today.",
+    "category": "UniFi",
     "image": "/images/blog/unas-2u.png",
     "content": "![unas-2u](/images/blog/unas-2u.png)\n\n# A big box arrived today…\n\nMy new Ubiquiti Inc. UniFi UPS 2U is finally here!\n\nI’m currently rebuilding my server rack and upgrading some of the hardware. It’s always fun to spend time working on something you’re passionate about.\n\nThe old CyberPower UPS will be going up for sale soon, as it’s time for an upgrade.\n\nUniFi hardware has been a pleasure to work with. Everything fits together nicely, and it makes managing my homelab much easier.\n\nI’ll share another photo once the rack rebuild is a bit further along. Stay tuned!",
     "_meta": {
@@ -40,6 +42,7 @@ export default [
     "updatedAt": "2026-05-13",
     "author": "MvL",
     "summary": "The MINISFORUM S7—fast NVMe storage for my Proxmox homelab.",
+    "category": "minisforum",
     "image": "/images/blog/s7.png",
     "content": "![minisforum-nas](/images/blog/s7.png)\n\n# Dear MINISFORUM,\n\nI’ve been a big fan of MINISFORUM ever since I started using the MINISFORUM MS-01 in my Proxmox VE cluster.\n\nThe MS-01 has been a great platform for virtualization and homelab projects, especially because of the 2x SFP+ 10Gb ports. High-speed networking makes a huge difference when working with virtual machines, containers, and storage traffic.\n\nNow MINISFORUM is introducing the new MINISFORUM S7 all-flash NVMe NAS, and I’m really excited about it. What immediately caught my attention is that it also includes 2x SFP+ 10Gb connections. This opens the door for very fast shared NVMe storage in combination with my Proxmox cluster.\n\nI’m seriously considering moving toward shared all-flash NVMe storage for better VM performance, faster migrations, and a more powerful homelab setup overall.\n\nIt’s great to see compact hardware becoming this powerful and network-focused.",
     "_meta": {
@@ -57,6 +60,7 @@ export default [
     "updatedAt": "2026-05-02",
     "author": "MvL",
     "summary": "A call for Ubiquiti and KPN to improve PPPoE performance on multi-gigabit fiber connections.",
+    "category": "Ubiquiti",
     "image": "/images/blog/ubiquiti-logo.jpg",
     "content": "![ubiquiti-logo](/images/blog/ubiquiti-logo.jpg)\n\n# Dear Ubiquiti Inc. and KPN,\n\nI want to highlight an issue many users are running into with PPPoE on KPN fiber connections.\n\nRight now, PPPoE is limiting the actual speeds we can achieve. Even with capable hardware, it’s difficult to reach the full bandwidth that is being delivered by the ISP. In my case, I’m not getting the speeds I should be seeing on a multi-gigabit fiber connection.\n\nThe main problem is that PPPoE introduces overhead and performance constraints, which become very noticeable at higher speeds. This turns it into a bottleneck—especially for users running homelabs, and high-performance setups.\n\nFrom the Ubiquiti side, better PPPoE optimization or improved performance (for example multi-core utilization) would already make a big difference.\n\nFrom the KPN side, it would be great to see a move toward more efficient alternatives that allow customers to fully utilize their fiber connections.\n\nThis affects a growing group of users who rely on stable and fast connectivity for virtualization, storage, and networking workloads. We’re simply trying to reach the speeds we are paying for.\n\nHopefully this gets the attention it deserves.",
     "_meta": {
@@ -74,6 +78,7 @@ export default [
     "updatedAt": "2026-04-19",
     "author": "MvL",
     "summary": "A call for a taller, 60cm-deep UniFi rack—the perfect fit for growing homelabs.",
+    "category": "Ubiquiti",
     "image": "/images/blog/rack.jpg",
     "content": "![ubiquiti-logo](/images/blog/rack.jpg)\n\nDear Ubiquiti Inc.,\n\nWe need to have a quick word.\n\nI’m running a homelab and using your gear daily, and I really like it. But I’m missing one thing: a server rack that is higher than 12U for home use.\n\n42U? That’s just too high for most homelabs. It quickly becomes overkill in a home setup. What would actually hit the sweet spot is something in between a taller home focused rack that still keeps a clean, premium look.\n\nAlso: 60cm depth would be perfect. Not too deep, fits nicely in a home environment, and still gives enough room for proper gear and cable management.\n\nFor homelab users like me, that balance between size, usability, and aesthetics is exactly what’s missing right now.\n\nHow about creating a bigger rack for home users?\n\nWho’s with me? Let’s do this!",
     "_meta": {
@@ -91,6 +96,7 @@ export default [
     "updatedAt": "2026-06-20",
     "author": "MvL",
     "summary": "From ClarkConnect to Kubernetes: My Homelab Challenge.",
+    "category": "Kubernetes",
     "image": "/images/blog/clarkconnect.jpeg",
     "content": "![clarkconnect-logo](/images/blog/clarkconnect.jpeg)\n\n# From ClarkConnect to Kubernetes: My Homelab Challenge\n\nI’m currently learning Kubernetes, and I have to say: it’s definitely next level technology!\n\nThere is a lot to learn, but that’s exactly what makes it such an interesting challenge. I think Kubernetes is a beautiful technology, especially because it is so closely connected to Linux.\n\nI already have some Linux experience from my homelab hobby. Many years ago, I first came into contact with a Linux distribution called ClarkConnect. That was where I learned a lot about Linux, networking, firewalls, and server management.\n\nAt the moment, I have a small bare-metal Kubernetes cluster running on two virtual machines: one Control Plane and one Worker node. As part of my learning journey, I also created a step-by-step guide on GitHub that explains how to install Kubernetes bare metal on Ubuntu Server 26.04.\n\nhttps://github.com/marcelvanleeuwen/kubernetes-documentation\n\nMy ultimate goal is to migrate my existing LXC containers to Kubernetes and gain more experience with cloud-native technologies along the way.\n\nThe learning curve is steep, but that is what makes it fun. 🚀",
     "_meta": {
@@ -108,6 +114,7 @@ export default [
     "updatedAt": "2026-01-01",
     "author": "MvL",
     "summary": "Hello world!",
+    "category": "Personal",
     "image": "/images/blog/hello-world.png",
     "content": "![pbs-screenshot](/images/blog/hello-world.png)\n\nHello world!\n\nMy name is Marcel and I live in the Netherlands. I thought it was time to start a blog about my tech life. This has been on my to-do list for a long time.\n\nI am a tech nerd by young age. System administration has been my hobby since I was young. I really enjoy working with servers, networks, and new technology.\n\nAt home, I have my own server rack where I run different systems. I am a big fan of UniFi and use it for my network and storage setup. I also run a Proxmox cluster on the Minisforum MS-01, which I use to manage virtual machines, LXC containers, and experiment with different setups. Over time, I am also becoming a big fan of Minisforum because of the performance and possibilities their systems offer.\n\nBesides that, I am interested in decentralized technologies. I follow and support two DePIN projects: PreSearch and RunOnFlux. This website is also running on Fluxcloud.\n\nIn this blog, I will share my experiences, setups, and things I learn along the way.\n\nThanks for visiting!\n\nMarcel",
     "_meta": {
@@ -125,6 +132,7 @@ export default [
     "updatedAt": "2026-05-18",
     "author": "MvL",
     "summary": "A possible UniFi 24U rack—a welcome upgrade for my growing homelab.",
+    "category": "Ubiquiti",
     "image": "/images/blog/hint.jpeg",
     "content": "![ubiquiti-logo](/images/blog/hint.jpeg)\n\n# Hi Ubiquiti Inc.,\n\nI think I may have found a small hint inside Ubiquiti Design Center about a possible new 24U rack from Ubiquiti and honestly, I really hope it becomes real soon.\n\nRight now, my current rack is simply too small for my growing homelab and networking setup. Over the last few years, the UniFi ecosystem has grown a lot, and many of us are running more equipment than ever before: gateways, switches, patch panels, NAS systems, UPS units, and mini servers for virtualization.\n\nOne thing I really like about the UniFi racks is the premium look and clean design. The white finish, and matching UniFi hardware make setups look incredibly clean compared to many traditional black server racks.\n\nPersonally, I would love to see a version around 60x60cm. That depth would be perfect for networking gear, patch panels, lightweight servers, and compact storage systems without taking up too much space in a room.\n\nAt the moment this is still speculation, but the hints inside the Design Center definitely caught my attention. If a 24U UniFi rack really is coming, I think there will be a lot of interest from the community.\n\nNow we wait",
     "_meta": {
@@ -142,6 +150,7 @@ export default [
     "updatedAt": "2024-07-29",
     "author": "MvL",
     "summary": "Proxmox Backup Server – Tip of the Day.",
+    "category": "Proxmox Backup Server",
     "image": "/images/blog/datastor.jpeg",
     "content": "![datastor](/images/blog/datastor.jpeg)\n\n# Proxmox Backup Server – Tip of the Day\n\nToday I wanted to remove a datastore from my Proxmox Backup Server. I searched through the web interface but couldn’t find a remove option anywhere.\n\nAfter a bit of searching, I discovered that in the latest versions of Proxmox Backup Server, you can remove the datastore configuration from the `Menu` --> `Administration` --> `Shell` with the following command:\n\n```bash\nproxmox-backup-manager datastore remove nvme_4TB\n```\n\nThis command removes the datastore from the PBS configuration.\n\nIt took me a while to find, so I hope this tip saves someone else some time.",
     "_meta": {
@@ -159,6 +168,7 @@ export default [
     "updatedAt": "2024-06-06",
     "author": "MvL",
     "summary": "Proxmox Backup Server – Tip of the Day.",
+    "category": "Proxmox Backup Server",
     "image": "/images/blog/pbs_connect.png",
     "content": "![datastor](/images/blog/pbs_connect.png)\n\nI’m currently improving the backup strategy for my VM infrastructure running on Proxmox VE.\n\nMy dedicated server in Helsinki runs Proxmox VE, while my Proxmox Backup Server is running in my homelab. What I really like is that you can easily connect both environments over a Layer 3 network connection, even when they are located in completely different locations.\n\nSetting it up is surprisingly simple:\n\nDatacenter → Storage → Add → Proxmox Backup Server\n\nFill in the required details such as:\n\n- ID\n- Server IP / hostname\n- Username\n- Password\n- Datastore\n- Fingerprint\n\nAnd that’s basically it.\n\nJust make sure TCP port 8007 is open and forwarded to your Proxmox Backup Server so your remote Proxmox VE host can connect securely to it.\n\nThis makes it very easy to create efficient off-site backups for virtual machines running on a dedicated server, while keeping the backup storage safely at home in your own homelab.\n\nOne of the things I really appreciate about the Proxmox ecosystem is how flexible and accessible it is for both homelab and professional environments.\n\n(this IP is just random) 😇",
     "_meta": {
@@ -176,6 +186,7 @@ export default [
     "updatedAt": "2026-04-12",
     "author": "MvL",
     "summary": "Expanding LVM-based swap in Proxmox—a few commands, no rebuild required.",
+    "category": "Proxmox VE",
     "image": "/images/blog/summary.png",
     "content": "![pbs-screenshot](/images/blog/summary.png)\n\nProxmox – Tip of the Day,\n\nDid you know that if you’re using LVM partitions in your Proxmox cluster, resizing your swap space is actually super straightforward?\n\nInstead of rebuilding or migrating anything, you can simply expand your swap volume on the fly and bring it back online in just a few commands.\n\nHere’s how it works:\n\n```bash\nswapoff -a\nlvresize -L +2G /dev/pve/swap\nmkswap /dev/pve/swap\nswapon -a\n```\n\nA quick breakdown:\n\n- swapoff -a -->safely disables swap\n- lvresize --> increases the logical volume size (in this example +2G)\n- mkswap --> reinitializes the swap space\n- swapon -a --> re-enables all swap defined in fstab\n\nJust make sure nothing critical is relying heavily on swap during the change.\n\nSmall trick, big convenience when managing storage in Proxmox clusters.",
     "_meta": {
@@ -193,6 +204,7 @@ export default [
     "updatedAt": "2026-04-25",
     "author": "MvL",
     "summary": "Full NVMe storage blocks VM migrations—a reminder to plan storage headroom in a Proxmox cluster.",
+    "category": "Proxmox VE",
     "image": "/images/blog/storage_full.png",
     "content": "![ubiquiti-logo](/images/blog/storage_full.png)\n\n# Proxmox – Tip of the Day\n\nRunning into a classic homelab / cluster problem lately…\n\nMy NVMe storage is completely full, which means I can’t migrate my VMs to another node in the cluster. Normally not a big deal until you need to reboot after a kernel update 😅\n\nRight now, that’s exactly the situation: I should restart my Proxmox nodes, but without migration capability, that would mean downtime for running workloads. Not ideal.\n\nTo make it worse: with current NVMe prices, just “adding more storage” isn’t exactly a fun or cheap fix either…\n\nAs a temporary workaround, I’ve held back kernel updates to avoid forced reboots:\n\napt-mark hold proxmox-kernel-*\n\nAnd when I’m ready again, I can simply re-enable updates with:\n\napt-mark unhold proxmox-kernel-*\n\nNot a long term solution, but it buys me some time until I fix the storage bottleneck.\n\nLooking ahead, I’m planning to move towards a Ceph setup.\n\nMoral of the story: always plan more headroom than you think you need especially with NVMe in clustered environments.",
     "_meta": {
@@ -210,6 +222,7 @@ export default [
     "updatedAt": "2026-05-10",
     "author": "MvL",
     "summary": "Expanding a Proxmox VM’s disk—a quick fix for running out of space.",
+    "category": "Proxmox VE",
     "image": "/images/blog/pbs-8gb.png",
     "content": "![pbs-screenshot](/images/blog/pbs-8gb.png)\n\n# Proxmox – Tip of the Day\n\nI ran into a common issue today in Proxmox VE. I gave one of my virtual machines a disk that was too small.\n\nLuckily, expanding the storage was very straightforward. First, I increased the virtual disk size using the Resize Disk option inside Proxmox.\n\nAfter that, I logged into the VM and extended the partition and filesystem with a few simple commands.\n\nCommands I used:\n\n```bash\ndf -h\ndf -T\nsudo growpart /dev/sda 2\nsudo resize2fs /dev/sda2\n```\n\nWhat these commands do:\n\n- `df -h` --> shows current disk usage in a readable format\n- `df -T` --> shows the filesystem type (to determine which command I needed)\n- `growpart` --> expands the partition\n- `resize2fs` --> expands the filesystem to use the new space\n\nAfter running these commands, the VM immediately had access to the extra storage without reinstalling.\n\nSmall issue, quick fix and a good reminder to always double check disk sizing when deploying new VMs.",
     "_meta": {
@@ -227,6 +240,7 @@ export default [
     "updatedAt": "2026-03-24",
     "author": "MvL",
     "summary": "Quickly Check Your Public IP.",
+    "category": "Linux",
     "image": "/images/blog/public_ip.jpg",
     "content": "![pbs-screenshot](/images/blog/public_ip.jpg)\n\nQuickly Check Your Public IP💡\n\nIf you’re hosting services at home like Home Assistant, a media server, or a private cloud it’s often useful to know your current public IP address. Instead of logging into your router or using a browser, just run this in your terminal:\n\n```bash\ncurl https://ipinfo.io/ip\n```\n\nDo you use small commands like this in your homelab?",
     "_meta": {
@@ -244,6 +258,7 @@ export default [
     "updatedAt": "2026-08-22",
     "author": "MvL",
     "summary": "Should I Switch to Linux?.",
+    "category": "Linux",
     "image": "images/blog/linux.jpg",
     "content": "![linux-logo](/images/blog/linux.jpg)\n\n# Should I Switch to Linux?\n\nSome people may think that I already use Linux on my laptop. However, that is not the case.\n\nI have been using macOS since 2013. Before that, I used Windows, but Windows 8 with all its tiles was not for me. In my opinion, Microsoft was moving in the wrong direction, so I switched to macOS.\n\nSince then, I have been a happy macOS user. I am also quite invested in the Apple ecosystem, which makes switching more difficult.\n\nLately, I have been reading more and more articles suggesting that this could finally be “the year of Linux on the desktop.” But people have been saying that for years, so I am still not completely convinced.\n\nI already use Linux in my server environment, and I absolutely love it there. It is stable, reliable, and gives me a lot of control. For servers, Linux is my first choice.\n\nI have experimented with Linux on desktops and laptops before, but only for a short time and that was many, many years ago. Unfortunately, it was not a successful experience. That is one of the reasons why I still have doubts about using Linux as my daily desktop operating system.\n\nBut Linux has improved a lot since then. Could it now offer the same comfortable experience as macOS for my daily work?\n\nSo, I have a question for my network:\n\nShould I start experimenting with Linux on a laptop again? If so, which Linux distribution would you recommend: Ubuntu or Fedora? Or should I simply stay with macOS?\n\nI would love to hear about your experiences.",
     "_meta": {
@@ -261,6 +276,7 @@ export default [
     "updatedAt": "2026-09-18",
     "author": "MvL",
     "summary": "Expanding my smart home with Homey on Proxmox—connecting devices, exploring automation, and tracking energy use.",
+    "category": "Smarthome",
     "image": "/images/blog/homey_bridge-energy_dongle.jpg",
     "content": "![Homey Bridge en Energy Dongle](/images/blog/homey_bridge-energy_dongle.jpg)\n\n# Taking my smart home beyond Hue and Apple Home\n\nI have been using smart home devices for years. It started with Philips Hue, now part of Signify, back when it was only available through the Apple Store. I have been a fan, and over time I added more lights, sensors and switches.\n\nHue and Apple Home have worked well for me, but I want to go further. I want to bring devices from different brands together and make them work as one system. After looking at the options, I chose Homey.\n\nI installed Homey Self-Hosted Server on my Proxmox cluster, using the LXC container Homey provides. I also bought a Homey Bridge to connect supported smart devices and an Energy Dongle for the P1 port on my smart meter. That will let me follow my energy use in Homey too.\n\nI’m still at the beginning. I have a few ideas for automations, but first I want to connect the devices I already have and see how well they work together. I’m curious where it will take me.",
     "_meta": {
@@ -278,6 +294,7 @@ export default [
     "updatedAt": "2026-10-03",
     "author": "MvL",
     "summary": "article is about how respect and kindness seem to be disappearing from society.",
+    "category": "Personal",
     "image": "/images/blog/respect.jpg",
     "content": "![respect](/images/blog/respect.jpg)\n\n# Where Did Respect for Each Other Go?\n\nSometimes I look at the world around me and wonder what happened to basic respect for other people. Maybe I am getting older and notice it more. Maybe social media makes bad behaviour more visible than it was in the past. \n\nBullying often starts at school. Someone looks different, talks differently, has different interests or simply does not fit into the group. That can already be enough to become a target. We often think that children will grow out of this behaviour. That they will become adults, learn from life and start treating other people with more respect.\n\nUnfortunately, not everyone does. Some people grow older, but never really grow up. The school playground is replaced by the workplace, the street, social media or the internet. Making fun of someone, insulting someone, excluding someone or trying to make another person feel small somehow becomes normal behaviour. But it should never be normal.\n\nToday almost everyone has a smartphone in their pocket. When something happens, it sometimes feels like the first reaction is no longer “Can I help?” Instead, people take out their phones. There is a fight? Film it. There is an accident? Film it. Someone is injured or lying on the ground? Film it. And before you know it, the video is shared on social media, WhatsApp groups or websites like Dumpert.\n\nWhy? For attention, likes or views? Have we really reached a point where filming someone's worst moment is more important than helping that person? The person lying on the ground is not content. That is a human being. Someone's son or daughter, father or mother, partner, friend or colleague. \n\nPeople should also understand that you cannot simply film and publish everything without thinking about privacy and possible legal consequences. Having a smartphone does not mean that everything you see should become content for the internet. Sometimes the most respectful thing you can do is simply put your phone away and help.\n\nYou can see the same attitude in everyday life. You are riding your bicycle and someone does not give you right of way. Instead of saying sorry, you get the middle finger. Two people are cycling next to each other and someone wants to pass, but they do not move aside. Is giving someone a little space really so difficult?\n\nYou are waiting at a red traffic light in your car. Your light turns green and you start driving. But a car coming from the other direction decides to quickly drive through the red light. You have to brake to avoid hitting the car. At the same time, a scooter that also has a green light continues driving. The scooter crashes into the car that went through the red light and ends up on its hood.\n\nWhat worries me is the attitude we seem to see more and more: me first. My time is more important. My opinion is more important. My road is more important. My phone, likes and views are more important.\n\nAsk yourself one simple question: how would I want to be treated if I were the other person?\n\nWe do not have to agree with everyone and we do not have to like everyone. We can have different opinions, different backgrounds and completely different lives. But we can still treat each other with respect. Respect costs nothing. Kindness costs nothing. \n\nIf bullying becomes normal, if filming becomes more important than helping, if a few seconds of our own time become more important than someone else's safety, and if we only think about ourselves, then maybe we should seriously ask ourselves:\n\nHow did we let society fall this far?",
     "_meta": {

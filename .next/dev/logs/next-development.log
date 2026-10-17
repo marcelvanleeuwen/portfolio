@@ -1,23 +1,791 @@
-[00:00:00.797] Server  LOG     ✓ Ready in 673ms
-[00:00:12.921] Server  ERROR   Expected style "zIndex: 2px" to be unitless
-[00:00:12.922] Server  ERROR   Expected style "zIndex: 1px" to be unitless
-[00:01:39.381] Browser WARN    Image with src "/images/homelab/homelab_version_2026.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
-Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
-[00:06:04.221] Server  LOG     ✓ Compiled in 115ms
-[00:06:48.667] Server  LOG     ✓ Compiled in 39ms
-[00:15:09.709] Server  LOG     ... error "Failed to reload configuration: Error: configuration file content-collections.ts is invalid: Error: Build failed with 2 errors:\ncontent-collections.ts:31:6: ERROR: The symbol \"posts\" has already been declared\ncontent-collections.ts:45:7: ERROR: Multiple exports with the same name \"default\""
-[00:16:42.926] Server  LOG     ... config changed
-[00:16:42.926] Server  LOG     build started ...
-[00:16:43.130] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "204ms"
-[00:16:43.179] Server  LOG     ✓ Compiled in 39ms
-[00:17:49.129] Server  LOG     ... config changed
-[00:17:49.129] Server  LOG     build started ...
-[00:17:49.139] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "10ms"
-[00:17:49.195] Server  LOG     ✓ Compiled in 16ms
-[00:19:58.045] Server  LOG     ✓ Compiled in 51ms
-[00:20:24.138] Server  LOG     ✓ Compiled in 68ms
-[00:22:03.607] Server  LOG     ✓ Compiled in 142ms
-[00:22:04.763] Browser ERROR   uncaughtError: Error: An unexpected Turbopack error occurred. Please see the output of `next dev` for more details.
-[00:23:11.337] Server  LOG     ... file "knowledge/about-this-wiki.mdx" "changed"
-[00:23:11.337] Server  LOG     build started ...
-[00:23:11.369] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "32ms"
+[00:00:00.933] Server  LOG     ✓ Ready in 823ms
+[00:03:23.702] Server  LOG     ... file "content/where-did-respect-for-each-other-go.mdx" "changed"
+[00:03:23.702] Server  LOG     build started ...
+[00:03:23.729] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "26ms"
+[00:03:55.649] Server  LOG     ... file "content/a-big-box-arrived-today.mdx" "changed"
+[00:03:55.650] Server  LOG     build started ...
+[00:03:55.680] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "30ms"
+[00:04:51.437] Server  LOG     ... file "content/dear-ubiquiti-inc.mdx" "changed"
+[00:04:51.438] Server  LOG     build started ...
+[00:04:51.468] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "30ms"
+[00:04:52.651] Server  LOG     ... file "content/a-big-box-arrived-today.mdx" "changed"
+[00:04:52.651] Server  LOG     build started ...
+[00:04:52.677] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "26ms"
+[00:04:55.724] Server  LOG     ... file "content/where-did-respect-for-each-other-go.mdx" "changed"
+[00:04:55.724] Server  LOG     build started ...
+[00:04:55.750] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "25ms"
+[00:05:11.732] Server  LOG     ... file "content/hi-ubiquiti-inc.mdx" "changed"
+[00:05:11.733] Server  LOG     build started ...
+[00:05:11.762] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "30ms"
+[00:05:22.815] Server  LOG     ... file "content/dear-ubiquiti-inc-and-kpn.mdx" "changed"
+[00:05:22.815] Server  LOG     build started ...
+[00:05:22.843] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "28ms"
+[00:05:43.095] Server  LOG     ... file "content/dear-minisforum.mdx" "changed"
+[00:05:43.095] Server  LOG     build started ...
+[00:05:43.125] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "29ms"
+[00:06:13.288] Server  LOG     ... file "content/from-clarkconnect-to-kubernetes-my-homelab-challenge.mdx" "changed"
+[00:06:13.289] Server  LOG     build started ...
+[00:06:13.316] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "27ms"
+[00:06:31.925] Server  LOG     ... file "content/hello-world.mdx" "changed"
+[00:06:31.925] Server  LOG     build started ...
+[00:06:31.951] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "26ms"
+[00:06:32.004] Server  LOG     ✓ Compiled in 6ms
+[00:06:52.383] Server  LOG     ... file "content/proxmox-backup-server-tip-of-the-day-1.mdx" "changed"
+[00:06:52.383] Server  LOG     build started ...
+[00:06:52.411] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "28ms"
+[00:07:05.749] Server  LOG     ... file "content/proxmox-backup-server-tip-of-the-day-2.mdx" "changed"
+[00:07:05.750] Server  LOG     build started ...
+[00:07:05.777] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "27ms"
+[00:07:08.017] Server  LOG     ... file "content/proxmox-backup-server-tip-of-the-day-1.mdx" "changed"
+[00:07:08.018] Server  LOG     build started ...
+[00:07:08.046] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "28ms"
+[00:07:10.804] Server  LOG     ... file "content/hello-world.mdx" "changed"
+[00:07:10.805] Server  LOG     build started ...
+[00:07:10.827] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "22ms"
+[00:07:13.064] Server  LOG     ... file "content/from-clarkconnect-to-kubernetes-my-homelab-challenge.mdx" "changed"
+[00:07:13.064] Server  LOG     build started ...
+[00:07:13.092] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "28ms"
+[00:07:13.180] Server  LOG     ✓ Compiled in 41ms
+[00:07:30.107] Server  LOG     ... file "content/Proxmox-tip-of-the-day-0.mdx" "changed"
+[00:07:30.107] Server  LOG     build started ...
+[00:07:30.135] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "28ms"
+[00:07:30.187] Server  LOG     ✓ Compiled in 6ms
+[00:07:45.948] Server  LOG     ... file "content/proxmox-tip-of-the-day-1.mdx" "changed"
+[00:07:45.948] Server  LOG     build started ...
+[00:07:45.973] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "25ms"
+[00:07:46.015] Server  LOG     ✓ Compiled in 8ms
+[00:07:53.191] Server  LOG     ... file "content/proxmox-tip-of-the-day-2.mdx" "changed"
+[00:07:53.191] Server  LOG     build started ...
+[00:07:53.217] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "26ms"
+[00:07:53.270] Server  LOG     ✓ Compiled in 7ms
+[00:08:06.737] Server  LOG     ... file "content/quickly-check-your-public-ip.mdx" "changed"
+[00:08:06.738] Server  LOG     build started ...
+[00:08:06.761] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "23ms"
+[00:08:06.814] Server  LOG     ✓ Compiled in 7ms
+[00:08:20.210] Server  LOG     ... file "content/should-I-switch-to-linux.mdx" "changed"
+[00:08:20.210] Server  LOG     build started ...
+[00:08:20.233] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "22ms"
+[00:08:20.286] Server  LOG     ✓ Compiled in 7ms
+[00:08:38.088] Server  LOG     ... file "content/taking-my-smart-home-beyond-hue-and-apple-home.mdx" "changed"
+[00:08:38.089] Server  LOG     build started ...
+[00:08:38.115] Server  LOG     ... finished build of 2 "collections" "and" 18 "documents" "in" "27ms"
+[00:08:38.164] Server  LOG     ✓ Compiled in 4ms
+[00:09:54.859] Server  LOG     ✓ Compiled in 6ms
+[00:18:06.456] Server  LOG     ✓ Compiled in 15ms
+[00:18:08.671] Browser ERROR   ./src/app/blog/page.tsx:79:3
+Parsing ecmascript source code failed
+   77 |       </form>
+   78 |
+>  79 |   return (
+      |   ^^^^^^^^
+>  80 |     <section id="blog">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  81 |       <BlurFade delay={BLUR_FADE_DELAY}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  82 |         <h1 className="text-4xl font-semibold tracking-tight mb-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  83 |           Blog{" "}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  84 |           <span className="ml-1 bg-card border border-border rounded-md px-2 py-1 text-muted-foreground text-sm">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  85 |             {sortedPosts.length} posts
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  86 |           </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |         </h1>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  89 |         <p className="text-sm text-muted-foreground mb-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  90 |           My thoughts on software development, life, and more.
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  91 |         </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  92 |       </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  93 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  94 |       {paginatedPosts.length > 0 ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  95 |         <>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  96 |           <BlurFade delay={BLUR_FADE_DELAY * 2}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  97 |             <div className="flex flex-col gap-5">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  98 |               {paginatedPosts.map((post, id) => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  99 |                 const slug = post._meta.path.replace(/\.mdx$/, "");
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 100 |                 const indexNumber = (pagination.page - 1) * PAGE_SIZE + id + 1;
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 102 |                 return (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 103 |                   <BlurFade
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 104 |                     delay={BLUR_FADE_DELAY * 3 + id * 0.05}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 105 |                     key={slug}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 106 |                   >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 107 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 108 |                       className="flex items-start gap-x-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 109 |                       href={`/blog/${slug}`}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 110 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 111 |                       <span className="text-xs font-mono tabular-nums font-medium mt-[5px]">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 112 |                         {String(indexNumber).padStart(2, "0")}.
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 113 |                       </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 114 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 115 |                       <div className="flex flex-col gap-y-2 flex-1">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 116 |                         <p className="tracking-tight text-lg font-medium">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 117 |                           <span className="group-hover:text-foreground transition-colors">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 118 |                             {post.title}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 119 |                             <ChevronRight
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 120 |                               className="ml-1 inline-block size-4 stroke-3 text-muted-foreground opacity-0 -translate-x-2 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 121 |                               aria-hidden
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 122 |                             />
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 123 |                           </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 124 |                         </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 125 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 126 |                         <div className="flex flex-wrap items-center gap-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 127 |                           <p className="text-xs text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 128 |                             {post.publishedAt}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 129 |                           </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 130 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 131 |                           {post.category && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 132 |                             <span className="rounded-md border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 133 |                               {post.category}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 134 |                             </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 135 |                           )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 136 |                         </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 137 |                       </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 138 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 139 |                   </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 140 |                 );
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 141 |               })}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 142 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 143 |           </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 144 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 145 |           {/* Pagination Controls */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 146 |           {pagination.totalPages > 1 && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 147 |             <BlurFade delay={BLUR_FADE_DELAY * 4}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 148 |               <div className="flex gap-3 flex-row items-center justify-between mt-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 149 |                 <div className="text-sm text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |                   Page {pagination.page} of {pagination.totalPages}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 152 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 153 |                 <div className="flex gap-2 sm:justify-end">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 154 |                   {pagination.hasPreviousPage ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 155 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 156 |                       href={`/blog?page=${pagination.page - 1}`}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 157 |                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 158 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 159 |                       Previous
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 160 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 161 |                   ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 162 |                     <span className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg opacity-50 cursor-not-allowed">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 163 |                       Previous
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 164 |                     </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |                   )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 167 |                   {pagination.hasNextPage ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 168 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 169 |                       href={`/blog?page=${pagination.page + 1}`}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 170 |                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 171 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |                       Next
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 173 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 174 |                   ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 175 |                     <span className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg opacity-50 cursor-not-allowed">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 176 |                       Next
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 177 |                     </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 178 |                   )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 179 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 180 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 181 |             </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 182 |           )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 183 |         </>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 184 |       ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 185 |         <BlurFade delay={BLUR_FADE_DELAY * 2}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 186 |           <div className="flex flex-col items-center justify-center py-12 px-4 border border-border rounded-xl">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 187 |             <p className="text-muted-foreground text-center">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 188 |               No blog posts yet. Check back soon!
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 189 |             </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 190 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 191 |         </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 192 |       )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 193 |     </section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 194 |   );
+      | ^^^^^
+  195 | }
+
+Return statement is not allowed here
+[00:18:08.671] Browser ERROR   ./src/app/blog/page.tsx:79:3
+Parsing ecmascript source code failed
+   77 |       </form>
+   78 |
+>  79 |   return (
+      |   ^^^^^^^^
+>  80 |     <section id="blog">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  81 |       <BlurFade delay={BLUR_FADE_DELAY}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  82 |         <h1 className="text-4xl font-semibold tracking-tight mb-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  83 |           Blog{" "}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  84 |           <span className="ml-1 bg-card border border-border rounded-md px-2 py-1 text-muted-foreground text-sm">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  85 |             {sortedPosts.length} posts
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  86 |           </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |         </h1>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  89 |         <p className="text-sm text-muted-foreground mb-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  90 |           My thoughts on software development, life, and more.
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  91 |         </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  92 |       </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  93 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  94 |       {paginatedPosts.length > 0 ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  95 |         <>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  96 |           <BlurFade delay={BLUR_FADE_DELAY * 2}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  97 |             <div className="flex flex-col gap-5">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  98 |               {paginatedPosts.map((post, id) => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  99 |                 const slug = post._meta.path.replace(/\.mdx$/, "");
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 100 |                 const indexNumber = (pagination.page - 1) * PAGE_SIZE + id + 1;
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 102 |                 return (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 103 |                   <BlurFade
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 104 |                     delay={BLUR_FADE_DELAY * 3 + id * 0.05}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 105 |                     key={slug}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 106 |                   >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 107 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 108 |                       className="flex items-start gap-x-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 109 |                       href={`/blog/${slug}`}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 110 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 111 |                       <span className="text-xs font-mono tabular-nums font-medium mt-[5px]">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 112 |                         {String(indexNumber).padStart(2, "0")}.
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 113 |                       </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 114 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 115 |                       <div className="flex flex-col gap-y-2 flex-1">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 116 |                         <p className="tracking-tight text-lg font-medium">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 117 |                           <span className="group-hover:text-foreground transition-colors">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 118 |                             {post.title}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 119 |                             <ChevronRight
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 120 |                               className="ml-1 inline-block size-4 stroke-3 text-muted-foreground opacity-0 -translate-x-2 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 121 |                               aria-hidden
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 122 |                             />
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 123 |                           </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 124 |                         </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 125 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 126 |                         <div className="flex flex-wrap items-center gap-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 127 |                           <p className="text-xs text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 128 |                             {post.publishedAt}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 129 |                           </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 130 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 131 |                           {post.category && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 132 |                             <span className="rounded-md border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 133 |                               {post.category}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 134 |                             </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 135 |                           )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 136 |                         </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 137 |                       </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 138 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 139 |                   </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 140 |                 );
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 141 |               })}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 142 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 143 |           </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 144 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 145 |           {/* Pagination Controls */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 146 |           {pagination.totalPages > 1 && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 147 |             <BlurFade delay={BLUR_FADE_DELAY * 4}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 148 |               <div className="flex gap-3 flex-row items-center justify-between mt-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 149 |                 <div className="text-sm text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |                   Page {pagination.page} of {pagination.totalPages}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 152 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 153 |                 <div className="flex gap-2 sm:justify-end">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 154 |                   {pagination.hasPreviousPage ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 155 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 156 |                       href={pageHref(pagination.page - 1)}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 157 |                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 158 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 159 |                       Previous
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 160 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 161 |                   ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 162 |                     <span className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg opacity-50 cursor-not-allowed">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 163 |                       Previous
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 164 |                     </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |                   )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 167 |                   {pagination.hasNextPage ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 168 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 169 |                       href={pageHref(pagination.page + 1)}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 170 |                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 171 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |                       Next
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 173 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 174 |                   ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 175 |                     <span className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg opacity-50 cursor-not-allowed">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 176 |                       Next
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 177 |                     </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 178 |                   )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 179 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 180 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 181 |             </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 182 |           )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 183 |         </>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 184 |       ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 185 |         <BlurFade delay={BLUR_FADE_DELAY * 2}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 186 |           <div className="flex flex-col items-center justify-center py-12 px-4 border border-border rounded-xl">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 187 |             <p className="text-muted-foreground text-center">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 188 |               No blog posts yet. Check back soon!
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 189 |             </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 190 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 191 |         </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 192 |       )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 193 |     </section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 194 |   );
+      | ^^^^^
+  195 | }
+
+Return statement is not allowed here
+[00:18:08.671] Browser ERROR   ./src/app/blog/page.tsx:79:3
+Parsing ecmascript source code failed
+   77 |       </form>
+   78 |
+>  79 |   return (
+      |   ^^^^^^^^
+>  80 |     <section id="blog">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  81 |       <BlurFade delay={BLUR_FADE_DELAY}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  82 |         <h1 className="text-4xl font-semibold tracking-tight mb-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  83 |           Blog{" "}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  84 |           <span className="ml-1 bg-card border border-border rounded-md px-2 py-1 text-muted-foreground text-sm">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  85 |             {sortedPosts.length} posts
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  86 |           </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  87 |         </h1>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  88 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  89 |         <p className="text-sm text-muted-foreground mb-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  90 |           My thoughts on software development, life, and more.
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  91 |         </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  92 |       </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  93 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  94 |       {paginatedPosts.length > 0 ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  95 |         <>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  96 |           <BlurFade delay={BLUR_FADE_DELAY * 2}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  97 |             <div className="flex flex-col gap-5">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  98 |               {paginatedPosts.map((post, id) => {
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+>  99 |                 const slug = post._meta.path.replace(/\.mdx$/, "");
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 100 |                 const indexNumber = (pagination.page - 1) * PAGE_SIZE + id + 1;
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 101 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 102 |                 return (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 103 |                   <BlurFade
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 104 |                     delay={BLUR_FADE_DELAY * 3 + id * 0.05}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 105 |                     key={slug}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 106 |                   >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 107 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 108 |                       className="flex items-start gap-x-2 group cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 109 |                       href={`/blog/${slug}`}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 110 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 111 |                       <span className="text-xs font-mono tabular-nums font-medium mt-[5px]">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 112 |                         {String(indexNumber).padStart(2, "0")}.
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 113 |                       </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 114 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 115 |                       <div className="flex flex-col gap-y-2 flex-1">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 116 |                         <p className="tracking-tight text-lg font-medium">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 117 |                           <span className="group-hover:text-foreground transition-colors">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 118 |                             {post.title}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 119 |                             <ChevronRight
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 120 |                               className="ml-1 inline-block size-4 stroke-3 text-muted-foreground opacity-0 -translate-x-2 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 121 |                               aria-hidden
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 122 |                             />
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 123 |                           </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 124 |                         </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 125 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 126 |                         <div className="flex flex-wrap items-center gap-2">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 127 |                           <p className="text-xs text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 128 |                             {post.publishedAt}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 129 |                           </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 130 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 131 |                           {post.category && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 132 |                             <span className="rounded-md border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 133 |                               {post.category}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 134 |                             </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 135 |                           )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 136 |                         </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 137 |                       </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 138 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 139 |                   </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 140 |                 );
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 141 |               })}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 142 |             </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 143 |           </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 144 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 145 |           {/* Pagination Controls */}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 146 |           {pagination.totalPages > 1 && (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 147 |             <BlurFade delay={BLUR_FADE_DELAY * 4}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 148 |               <div className="flex gap-3 flex-row items-center justify-between mt-8">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 149 |                 <div className="text-sm text-muted-foreground">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 150 |                   Page {pagination.page} of {pagination.totalPages}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 151 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 152 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 153 |                 <div className="flex gap-2 sm:justify-end">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 154 |                   {pagination.hasPreviousPage ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 155 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 156 |                       href={pageHref(pagination.page - 1)}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 157 |                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 158 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 159 |                       Previous
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 160 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 161 |                   ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 162 |                     <span className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg opacity-50 cursor-not-allowed">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 163 |                       Previous
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 164 |                     </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 165 |                   )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 166 |
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 167 |                   {pagination.hasNextPage ? (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 168 |                     <Link
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 169 |                       href={pageHref(pagination.page + 1)}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 170 |                       className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg hover:bg-accent/50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 171 |                     >
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 172 |                       Next
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 173 |                     </Link>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 174 |                   ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 175 |                     <span className="h-8 w-fit px-2 flex items-center justify-center text-sm border border-border rounded-lg opacity-50 cursor-not-allowed">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 176 |                       Next
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 177 |                     </span>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 178 |                   )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 179 |                 </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 180 |               </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 181 |             </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 182 |           )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 183 |         </>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 184 |       ) : (
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 185 |         <BlurFade delay={BLUR_FADE_DELAY * 2}>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 186 |           <div className="flex flex-col items-center justify-center py-12 px-4 border border-border rounded-xl">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 187 |             <p className="text-muted-foreground text-center">
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 188 |               No articles found. Try another search or category.
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 189 |             </p>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 190 |           </div>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 191 |         </BlurFade>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 192 |       )}
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 193 |     </section>
+      | ^^^^^^^^^^^^^^^^^^^^^^^
+> 194 |   );
+      | ^^^^^
+  195 | }
+
+Return statement is not allowed here

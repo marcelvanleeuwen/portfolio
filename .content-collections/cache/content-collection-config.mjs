@@ -41,6 +41,7 @@ var posts = defineCollection({
     updatedAt: z.string().optional(),
     author: z.string().optional(),
     summary: z.string(),
+    category: z.string().optional(),
     image: z.string().optional(),
     content: z.string()
   }),
