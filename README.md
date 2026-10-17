@@ -1,47 +1,55 @@
-<div align="center">
-<img alt="Portfolio" src="https://github.com/dillionverma/portfolio/assets/16860528/57ffca81-3f0a-4425-b31d-094f61725455" width="90%">
-</div>
+# The Homelabber.io
 
-# Portfolio [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdillionverma%2Fportfolio)
+This is the source code for my personal website, [thehomelabber.io](https://thehomelabber.io).
 
-Built with next.js, [shadcn/ui](https://ui.shadcn.com/), and [magic ui](https://magicui.design/), deployed on Vercel.
+I use this website to share my homelab, projects, blog posts, and practical notes about IT. My main interests are Linux, networking, virtualization, containers, and automation.
 
-# Features
+I used the original idea and code from [Dillion Verma’s portfolio](https://github.com/dillionverma/portfolio) as a starting point for my own website. I have changed it to fit my own needs, and I am still working on it as I learn and add new ideas.
 
-- Setup only takes a few minutes by editing the [single config file](./src/data/resume.tsx)
-- Built using Next.js 14, React, Typescript, Shadcn/UI, TailwindCSS, Framer Motion, Magic UI
-- Includes a blog
-- Responsive for different devices
-- Optimized for Next.js and Vercel
+## What is on the website?
 
-# Getting Started Locally
+- Information about me and my interests
+- An overview of my homelab
+- Blog posts about IT and everyday life
+- HomeLab 
+- A knowledge base with notes and guides
+- Socials
+- Light and dark themes
 
-1. Clone this repository to your local machine:
+## Built with
+
+Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Magic UI, and Motion. Blog posts and knowledge articles use MDX.
+
+## Run locally
+
+1. Clone the repository:
 
    ```bash
-   git clone https://github.com/dillionverma/portfolio
-   ```
-
-2. Move to the cloned directory
-
-   ```bash
+   git clone https://github.com/marcelvanleeuwen/portfolio.git
    cd portfolio
    ```
 
-3. Install dependencies:
+2. Install the packages:
 
    ```bash
    pnpm install
    ```
 
-4. Start the local Server:
+3. Start the development server:
 
    ```bash
    pnpm dev
    ```
 
-5. Open the [Config file](./src/data/resume.tsx) and make changes
+4. Open [localhost:3000](http://localhost:3000) in your browser.
 
-# License
+## Make changes
 
-Licensed under the [MIT license](https://github.com/dillionverma/portfolio/blob/main/LICENSE.md).
+- Edit `src/data/resume.tsx` to change personal information and menu items.
+- Add or edit blog posts in `content/`.
+- Add or edit knowledge articles in `knowledge/`.
+- Store images and other public files in `public/`.
+
+## License
+
+This project uses the [MIT License](./LICENSE). The original copyright notice for Dillion Verma is kept in the license file.
