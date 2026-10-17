@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/blog/54-today":{},"/blog/a-big-box-arrived-today":{},"/blog/dear-minisforum":{},"/blog/dear-ubiquiti-inc-and-kpn":{},"/blog/dear-ubiquiti-inc":{},"/blog/from-clarkconnect-to-kubernetes-my-homelab-challenge":{},"/blog/hello-world":{},"/blog/hi-ubiquiti-inc":{},"/blog/proxmox-backup-server-tip-of-the-day-1":{},"/blog/proxmox-backup-server-tip-of-the-day-2":{},"/blog/Proxmox-tip-of-the-day-0":{},"/blog/proxmox-tip-of-the-day-1":{},"/blog/proxmox-tip-of-the-day-2":{},"/blog/quickly-check-your-public-ip":{},"/blog/should-I-switch-to-linux":{},"/blog/taking-my-smart-home-beyond-hue-and-apple-home":{},"/blog/where-did-respect-for-each-other-go":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"3317fda515395ab7d3b3e85f7fd16d95","previewModeSigningKey":"a390e48817c41c097c143c762e5c97600c63ccf356cbc4c4850265602bc8bcfc","previewModeEncryptionKey":"f151e34a5d4c62f1d770944d97f6d83701ec3ff60249f32cc8a36edde2ca4a15"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "e1e4b2c4f3158fa0226cebb2d2a65d1d",
+    "previewModeSigningKey": "25e18bca8d131fef1ea62c7af7bd2e9708706d48b95e9409af73d0977ff7e5f6",
+    "previewModeEncryptionKey": "79858ce14e73a4b913ed89f68a352d77ae2768454b32522a1a5595d494f95aec"
+  }
+}
