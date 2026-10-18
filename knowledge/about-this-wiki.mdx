@@ -1,10 +1,49 @@
 ---
-title: "About this wiki"
-summary: "How this knowledge base is organised and how to find your way around."
-category: "General"
-updatedAt: "2026-10-17"
+title: "Remove a Node from a Proxmox Cluster"
+summary: "Remove a node from a Proxmox cluster with `pvecm delnode`, then check the cluster status and quorum."
+category: "Proxmox"
+updatedAt: "2026-10-18"
 ---
 
-## A place for reference material
+The `pvecm delnode` command removes a node from the cluster configuration. Run it on a node that will remain in the cluster.
 
-Hier begint de inhoud.
+## Before you start
+
+- Move all VMs and LXC containers to another node.
+- Check for replication jobs, HA settings, or Ceph services that use the node.
+- Shut down the node you want to remove and keep it off.
+- Make sure the remaining cluster has quorum. A two-node cluster without a QDevice needs extra steps. If you use a QDevice, remove its configuration before removing the node.
+
+## Remove the node
+
+List the cluster nodes:
+
+```bash
+pvecm nodes
+```
+
+Find the correct node name, then run:
+
+```bash
+pvecm delnode NODE_NAME
+```
+
+Replace `NODE_NAME` with the name of the node. For example:
+
+```bash
+pvecm delnode pve-04
+```
+
+This removes `pve-04` from the cluster configuration. It does not erase its disks or turn it into a standalone server.
+
+## Check the cluster
+
+Run:
+
+```bash
+pvecm status
+```
+
+Check that the remaining nodes are present and the cluster has quorum.
+
+**Do not reconnect the removed node with its old cluster configuration.** Proxmox recommends a fresh installation before adding it to a cluster again.
