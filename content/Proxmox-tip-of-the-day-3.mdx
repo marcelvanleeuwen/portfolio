@@ -1,0 +1,47 @@
+---
+title: "Proxmox - Tip of the Day - How to Remove a Node"
+publishedAt: "2026-10-18"
+updatedAt: "2026-10-18"
+author: "MvL"
+summary: "Learn how to remove a node from a Proxmox cluster using pvecm delnode."
+category: "Proxmox"
+image: "/images/blog/quorum.jpg"
+---
+
+I recently wanted to remove a node because I wanted to try something with that hardware. But I did not know how to do it. After some searching, I found the command to remove a node from a Proxmox cluster. As far as I know, you cannot do this through the web interface.
+
+1. Of course, first move all VMs and LXC containers to another node before removing the node.
+
+2. Shut down the node you want to remove. It must stay off during the removal process.
+
+    <i>Do not start it again on the same cluster network with its old cluster configuration. Proxmox recommends a fresh installation before adding the server to a cluster again.</i>
+
+3. Open the shell on another node that will stay in the cluster. Run:
+
+    ```bash
+    pvecm nodes
+    ```
+
+4. Find the name of the node you want to remove. Then run:
+
+    ```bash
+    pvecm delnode NODE_NAME
+    ```
+
+    <i>Example: pvecm delnode pve-04</i>
+
+    This removes pve-04 from the cluster configuration.
+
+5. After removing the node, check the cluster status:
+
+    ```bash
+    pvecm status
+    ```
+
+6. Check that the remaining nodes are present and the cluster has quorum.
+
+    <i>A cluster normally needs at least three nodes to keep quorum when one node goes offline. In a two-node cluster without a QDevice, shutting down one node causes the other to lose quorum. You will need extra steps before you can remove the node.</i>
+
+And that’s it!
+
+![quorum](/images/blog/quorum.jpg)
