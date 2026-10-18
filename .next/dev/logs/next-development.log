@@ -1,1 +1,24 @@
-[00:00:00.508] Server  LOG     ✓ Ready in 403ms
+[00:00:00.547] Server  LOG     ✓ Ready in 454ms
+[00:00:56.076] Server  LOG     ... file "content/A small-update-to-my-website.mdx" "changed"
+[00:00:56.076] Server  LOG     build started ...
+[00:00:56.202] Server  LOG     ... file "content/A small update to my website.mdx" "deleted"
+[00:00:56.202] Server  LOG     build started ...
+[00:00:56.233] Server  LOG     ... finished build of 2 "collections" "and" 20 "documents" "in" "31ms"
+[00:00:56.233] Server  LOG     ... finished build of 2 "collections" "and" 21 "documents" "in" "157ms"
+[00:01:08.319] Server  LOG     ... file "content/A small-update-to-my-website.mdx" "changed"
+[00:01:08.319] Server  LOG     build started ...
+[00:01:08.353] Server  LOG     ... finished build of 2 "collections" "and" 20 "documents" "in" "34ms"
+[00:01:44.329] Server  LOG     ... file "content/A-small-update-to-my-website.mdx" "changed"
+[00:01:44.330] Server  LOG     build started ...
+[00:01:44.359] Server  LOG     ... finished build of 2 "collections" "and" 21 "documents" "in" "30ms"
+[00:01:44.438] Server  LOG     ... file "content/A small-update-to-my-website.mdx" "deleted"
+[00:01:44.438] Server  LOG     build started ...
+[00:01:44.471] Server  LOG     ... finished build of 2 "collections" "and" 20 "documents" "in" "33ms"
+[00:01:44.515] Server  LOG     ✓ Compiled in 3ms
+[00:01:51.550] Server  LOG     ... file "content/a-small-update-to-my-website.mdx" "changed"
+[00:01:51.551] Server  LOG     build started ...
+[00:01:51.581] Server  LOG     ... finished build of 2 "collections" "and" 21 "documents" "in" "31ms"
+[00:01:51.648] Server  LOG     ... file "content/A-small-update-to-my-website.mdx" "deleted"
+[00:01:51.648] Server  LOG     build started ...
+[00:01:51.655] Server  LOG     ... finished build of 2 "collections" "and" 20 "documents" "in" "7ms"
+[00:01:51.667] Server  LOG     ✓ Compiled in 0ms

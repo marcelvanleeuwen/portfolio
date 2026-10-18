@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "e1e4b2c4f3158fa0226cebb2d2a65d1d",
-    "previewModeSigningKey": "25e18bca8d131fef1ea62c7af7bd2e9708706d48b95e9409af73d0977ff7e5f6",
-    "previewModeEncryptionKey": "79858ce14e73a4b913ed89f68a352d77ae2768454b32522a1a5595d494f95aec"
-  }
-}
+{"version":4,"routes":{"/blog/54-today":{},"/blog/A small update to my website":{},"/blog/a-big-box-arrived-today":{},"/blog/dear-minisforum":{},"/blog/dear-ubiquiti-inc-and-kpn":{},"/blog/dear-ubiquiti-inc":{},"/blog/from-clarkconnect-to-kubernetes-my-homelab-challenge":{},"/blog/hello-world":{},"/blog/hi-ubiquiti-inc":{},"/blog/proxmox-backup-server-tip-of-the-day-1":{},"/blog/proxmox-backup-server-tip-of-the-day-2":{},"/blog/Proxmox-tip-of-the-day-0":{},"/blog/proxmox-tip-of-the-day-1":{},"/blog/proxmox-tip-of-the-day-2":{},"/blog/Proxmox-tip-of-the-day-3":{},"/blog/quickly-check-your-public-ip":{},"/blog/should-I-switch-to-linux":{},"/blog/taking-my-smart-home-beyond-hue-and-apple-home":{},"/blog/where-did-respect-for-each-other-go":{},"/blog/A small-update-to-my-website":{},"/blog/a-small-update-to-my-website":{}},"dynamicRoutes":{"/blog/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/blog/[slug]","routeRegex":"^\\/blog\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"3b2e74bfd4d7f5d96588390b2590b822","previewModeSigningKey":"c2ff6abf2455d636eb1b454a542c67991b385ddc0a31161d6aa3fb6d3f102d03","previewModeEncryptionKey":"543593ca40cb3138ba0b2ff9f33c23c0956b8eb2688cc6d1f4b89c14d3e6a50e"}}
