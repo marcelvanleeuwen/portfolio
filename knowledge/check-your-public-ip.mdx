@@ -1,0 +1,86 @@
+---
+title: "Check Your Public IP from the Terminal"
+summary: "Find your public IP with curl, check IPv4 and IPv6, and understand the result when using a VPN or hosting services at home."
+category: "Networking"
+updatedAt: "2026-10-21"
+---
+
+When troubleshooting a homelab, it helps to know which public IP address your connection uses. You can check it from a terminal without opening your router settings.
+
+## Before you start
+
+You need an internet connection and `curl`. The examples below use a Linux or macOS terminal. On Windows, use `curl.exe` instead of `curl` to avoid the alias used by Windows PowerShell.
+
+## Check your public IP
+
+Run:
+
+```bash
+curl https://ipinfo.io/ip
+```
+
+The response contains the source IP address that IPinfo sees for this request. For example:
+
+```text
+203.0.113.42
+```
+
+This is an example address. Your result will be different.
+
+For cleaner output and a time limit, use:
+
+```bash
+curl -fsS --max-time 10 https://ipinfo.io/ip
+```
+
+- `-f` returns an error for HTTP failures.
+- `-s` hides the progress meter.
+- `-S` keeps error messages visible.
+- `--max-time 10` limits the request to ten seconds.
+
+If your terminal prompt appears directly after the address, run `echo` to move to a new line.
+
+## Check IPv4 or IPv6
+
+To request an IPv4 connection:
+
+```bash
+curl -4 -fsS --max-time 10 https://ipinfo.io/ip
+```
+
+To request an IPv6 connection:
+
+```bash
+curl -6 -fsS --max-time 10 https://ipinfo.io/ip
+```
+
+The IPv6 command requires working IPv6 connectivity. If it fails while IPv4 works, check whether your device, router, and provider support IPv6 on this connection.
+
+Without `-4` or `-6`, the result depends on the connection curl establishes.
+
+## Understand the result
+
+A private address such as `192.168.1.20` identifies a device inside your local network. On a typical home IPv4 network, outbound connections share a public address through the router and sometimes through the provider's network too.
+
+Run the command on the device you want to check. A server, laptop, or container may use a different route to the internet.
+
+- **VPN:** If this request travels through a VPN, the result normally shows the VPN exit address.
+- **Proxy:** A configured proxy can change the address seen by the service.
+- **IPv6:** Devices can have their own globally routable IPv6 addresses, so the result may differ between devices.
+- **Dynamic address:** Your provider may change your public IP over time. Dynamic DNS can help keep a hostname up to date.
+
+Knowing the address does not prove that a service is reachable from outside. Firewall rules, port forwarding, and your provider's network still affect incoming connections. With carrier-grade NAT (CGNAT), ordinary port forwarding on your home router alone is generally insufficient for incoming IPv4 access.
+
+## Troubleshooting
+
+- **Command not found:** Install curl using your operating system's package manager.
+- **Could not resolve host:** Check your internet connection and DNS settings.
+- **Connection timed out:** Check routing, firewall rules, and any VPN or proxy settings.
+- **HTTP error:** The service may be unavailable or applying a request limit. Try again later.
+- **Unexpected address:** Check which network, VPN, or proxy the device is using, and compare the same IP version.
+
+## Related reading
+
+- [Original blog post: Quickly Check Your Public IP](/blog/quickly-check-your-public-ip)
+- [IPinfo documentation](https://ipinfo.io/developers)
+- [curl command-line documentation](https://curl.se/docs/manpage.html)

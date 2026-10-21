@@ -1,0 +1,176 @@
+---
+title: "Update Next.js with pnpm and Git"
+summary: "Update Next.js, test your website, and deploy the changes with a GitHub pull request."
+category: "Web Development"
+updatedAt: "2026-10-21"
+---
+
+This guide shows how to update a Next.js website with pnpm and Git. First, make the update on a separate branch. Then test the website, merge the changes, and deploy it again.
+
+This example updates Next.js from 16.1.1 to 16.4.2. For a future update, use the version you want to install and read its release notes.
+
+## 1. Open your project
+
+Open a terminal and go to your project folder. On my computer, the folder is:
+
+```bash
+cd ~/Documents/portfolio
+```
+
+Check for local changes:
+
+```bash
+git status
+```
+
+Commit any unfinished work or save it separately before you start.
+
+## 2. Create a branch
+
+Get the latest code from GitHub and create a branch for the update:
+
+```bash
+git switch main
+git pull --ff-only
+git switch -c update-nextjs
+```
+
+If the branch already exists and you want to continue that update, use:
+
+```bash
+git switch update-nextjs
+```
+
+If you have already updated the packages locally, create the update branch in your current working folder and continue with the checks below.
+
+## 3. Update Next.js
+
+Update Next.js and its ESLint package to the same version:
+
+```bash
+pnpm add --save-exact next@16.4.2
+pnpm add -D --save-exact eslint-config-next@16.4.2
+```
+
+These commands update two files:
+
+- `package.json` lists the packages your project needs.
+- `pnpm-lock.yaml` records the exact package versions, including their dependencies.
+
+Commit both files. This helps your server install the same versions as your computer.
+
+The `--save-exact` option saves the version without a `^` or `~` before it.
+
+Check any messages about Node.js, React, or plugin versions. Fix version conflicts before you continue.
+
+## 4. Check the update
+
+Run these commands one at a time:
+
+```bash
+pnpm lint
+pnpm build
+pnpm audit
+```
+
+- `pnpm lint` checks your code for lint errors.
+- `pnpm build` creates the production build.
+- `pnpm audit` checks for known security issues in your packages.
+
+Fix errors before you publish the update. Read any warnings too. A warning does not always stop the build, but it may need attention later.
+
+A successful build does not mean every security issue is fixed. The audit may still report issues in other packages.
+
+## 5. Test the website locally
+
+After the build succeeds, start the local production server:
+
+```bash
+pnpm start
+```
+
+Open [localhost:3000](http://localhost:3000) in your browser.
+
+Check these parts of the website:
+
+- The home page and menu.
+- The blog page and a few posts.
+- The knowledge page and a wiki article.
+- The homelab page and its images.
+- The light and dark themes.
+- Code blocks.
+
+Also check the social preview images at `/opengraph-image` and `/blog/opengraph-image`.
+
+Press **Ctrl+C** in the terminal to stop the server.
+
+## 6. Commit and push the update
+
+Check which files have changed:
+
+```bash
+git status
+git diff -- package.json pnpm-lock.yaml
+```
+
+Save the package update in Git and push it to GitHub:
+
+```bash
+git add package.json pnpm-lock.yaml
+git commit -m "Update Next.js to 16.4.2"
+git push -u origin update-nextjs
+```
+
+If you also changed source code or settings for this update, review and add those files before you commit.
+
+Do not add build files from `.next/` to this commit.
+
+## 7. Create a pull request
+
+Open your repository on GitHub. You will usually see a message about your `update-nextjs` branch.
+
+1. Click **Compare & pull request**.
+2. Check that the base branch is `main` and the compare branch is `update-nextjs`.
+3. Use the title `Update Next.js to 16.4.2`.
+4. Describe the checks you ran and any security warnings that remain.
+5. Click **Create pull request**.
+6. Review the changed files and any automatic checks.
+7. Merge the pull request when the checks pass.
+
+## 8. Deploy the website
+
+The update is now in the main branch on GitHub. Your live website still needs a new deployment.
+
+If your hosting deploys automatically, check that the new deployment succeeds.
+
+If you host the website yourself, get the new code, rebuild the app or container, and restart the service. Use the normal deployment steps for your server.
+
+A pnpm deployment often includes these build commands:
+
+```bash
+pnpm install --frozen-lockfile
+pnpm build
+```
+
+The `--frozen-lockfile` option uses the saved package versions and does not change the lockfile.
+
+The command to start or restart the website depends on your hosting setup.
+
+After deployment, test the live website again. Check the build logs to confirm that the new Next.js version was used.
+
+## 9. Update your local main branch
+
+After you merge the pull request, update your local copy:
+
+```bash
+git switch main
+git pull --ff-only
+```
+
+Your local main branch now includes the update.
+
+## Useful links
+
+- [Next.js upgrade guide](https://nextjs.org/docs/app/guides/upgrading/version-16)
+- [Next.js security advisories](https://github.com/vercel/next.js/security/advisories)
+- [pnpm install documentation](https://pnpm.io/cli/install)
