@@ -53,6 +53,6 @@ const knowledge = defineCollection({
 });
 
 export default defineConfig({
-    collections: [posts, knowledge],
+    content: [posts, knowledge],
 });
 
