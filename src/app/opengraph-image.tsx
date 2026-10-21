@@ -1,8 +1,10 @@
  
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { DATA } from "@/data/resume";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 
 export const alt = DATA.name;
 export const size = {
@@ -14,12 +16,8 @@ export const contentType = "image/png";
 const getFontData = async () => {
     try {
         const [cabinetGrotesk, clashDisplay] = await Promise.all([
-            fetch(
-                new URL("../../public/fonts/CabinetGrotesk-Medium.ttf", import.meta.url)
-            ).then((res) => res.arrayBuffer()),
-            fetch(
-                new URL("../../public/fonts/ClashDisplay-Semibold.ttf", import.meta.url)
-            ).then((res) => res.arrayBuffer()),
+            readFile(join(process.cwd(), "public", "fonts", "CabinetGrotesk-Medium.ttf")),
+            readFile(join(process.cwd(), "public", "fonts", "ClashDisplay-Semibold.ttf")),
         ]);
         return { cabinetGrotesk, clashDisplay };
     } catch (error) {
@@ -63,7 +61,7 @@ const styles = {
         left: "40px",
         display: "flex",
         alignItems: "center",
-        zIndex: "2",
+
     },
     mainContainer: {
         display: "flex",
@@ -73,7 +71,7 @@ const styles = {
         height: "100%",
         width: "100%",
         position: "relative",
-        zIndex: "1",
+
     },
     image: {
         width: "140px",
@@ -161,7 +159,7 @@ export default async function Image() {
     } catch (error) {
         console.error("Error generating OpenGraph image:", error);
         return new Response(
-            `Failed to generate image: ${error instanceof Error ? error.message : "Unknown error"}`,
+            "Failed to generate image",
             {
                 status: 500,
             }
