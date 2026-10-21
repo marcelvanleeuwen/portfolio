@@ -1,0 +1,70 @@
+---
+title: "Install Argo CD on Kubernetes"
+summary: "Install Argo CD, connect through a local port forward, and register a Git repository."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+You need a working cluster, sufficient resources, and kubectl access with permission to install cluster-wide resources. Check your current context before installing:
+
+```bash
+kubectl config current-context
+```
+
+The installation below follows Argo CD's stable manifest, which changes over time. Pin a reviewed release for repeatable deployments. [Official getting started guide](https://argo-cd.readthedocs.io/en/stable/getting_started/)
+
+Install Argo CD CLI on MacOS
+
+```sh
+brew install argocd
+```
+
+Install Argo CD on k8s cluster:
+
+```sh
+kubectl create namespace argocd
+```
+```sh
+kubectl apply -n argocd --server-side --force-conflicts -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+```
+
+Kubectl port-forward can also be used to connect to the API server without exposing the service.
+
+```sh
+kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+The initial password for the admin account is auto-generated and stored as clear text in the field password in a secret named argocd-initial-admin-secret in your Argo CD installation namespace. You can simply retrieve this password using the argocd CLI:
+
+```sh
+argocd admin initial-password -n argocd
+```
+
+Login via the CLI:
+
+```sh
+argocd login localhost:8080 --insecure
+```
+
+Add a private repository (optional):
+
+```sh
+argocd repo add git@github.com:YOUR-ACCOUNT/YOUR-REPOSITORY.git --ssh-private-key-path ~/.ssh/id_ed25519
+```
+
+Keep the port-forward running in its own terminal and open `https://localhost:8080`. Use `admin` with the initial password. The default certificate may be self-signed; `--insecure` in the CLI example is for this local bootstrap connection. Use trusted TLS for regular remote access.
+
+After login, change the initial password:
+
+```bash
+argocd account update-password
+```
+
+Then remove the bootstrap secret when it is no longer needed:
+
+```bash
+kubectl delete secret argocd-initial-admin-secret -n argocd
+```
+
+Use a repository-scoped, preferably read-only deploy key for the optional SSH repository connection. Registering a repository does not deploy an application; create an Argo CD Application that points to your manifests next.
+

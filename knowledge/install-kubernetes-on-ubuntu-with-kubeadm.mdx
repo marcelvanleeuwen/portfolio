@@ -1,0 +1,240 @@
+---
+title: "Install Kubernetes on Ubuntu with kubeadm"
+summary: "Prepare Ubuntu nodes, configure containerd, and create a Kubernetes cluster with kubeadm."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+This is the Ubuntu and kubeadm installation route, not the Talos/Omni route. Run node preparation on every node, but initialize only the first control plane. The source guide uses Ubuntu Server 26.04 LTS and Kubernetes 1.36; these are example versions rather than a claim that they are the latest.
+
+Check the [official kubeadm prerequisites](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/) and [container runtime guidance](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) for your selected versions. Containerd's configuration layout differs between major versions. Ensure its CRI plugin is enabled and its cgroup driver matches kubelet.
+
+### Before you begin:
+
+- A compatible Linux host. This guide uses Ubuntu Server 26.04 LTS.
+- 2GB or more RAM
+- 2 CPUs or more for control plane machines
+- Full network connectivity
+- Unique hostname, MAC address
+- Required Kubernetes ports must be open between the control-plane and worker nodes
+
+### Preferred Operating System: 
+
+Ubuntu Server 26.04 LTS
+
+### Install Ubuntu Server:
+
+Perform the following steps on every control-plane and worker node before initializing or joining the cluster.
+
+- Install Ubuntu Server
+- Configure a static IP address during installation
+- Set the timezone
+  
+  ```sh
+  sudo timedatectl set-timezone Europe/Amsterdam
+  ```
+
+- Reboot
+- Login
+- Update Ubuntu Server
+
+### Update Ubuntu Server:
+
+```sh
+sudo apt-get update && sudo apt-get upgrade -y 
+```
+Reboot the node if a kernel update was installed.
+
+### Set hostname:
+
+```sh
+sudo hostnamectl set-hostname "new-hostname"
+```
+example: k8s-cp-1
+
+Check the hostname
+
+```sh
+hostname
+```
+
+### Disable Linux Swap:
+
+```sh
+sudo swapoff -a
+```
+```sh
+sudo sed -i '/\sswap\s/ s/^\(.*\)$/#\1/g' /etc/fstab
+```
+```sh
+swapon --show
+```
+If the command returns no output, swap is disabled successfully.
+
+### Set up container runtime prerequisites:
+
+Load the required kernel modules and configure them to load automatically after a reboot.
+
+```sh
+echo -e "overlay\nbr_netfilter" | sudo tee /etc/modules-load.d/containerd.conf > /dev/null
+```
+
+```sh
+sudo modprobe overlay
+```
+
+```sh
+sudo modprobe br_netfilter
+```
+
+### Configure required sysctl parameters. These persist across reboots:
+
+```sh
+echo -e "net.bridge.bridge-nf-call-iptables = 1\nnet.ipv4.ip_forward = 1\nnet.bridge.bridge-nf-call-ip6tables = 1" | sudo tee /etc/sysctl.d/99-kubernetes-cri.conf > /dev/null
+```
+
+### Apply the sysctl parameters without rebooting:
+
+```sh
+sudo sysctl --system
+```
+
+### Install containerd:
+
+```sh
+sudo apt-get update
+sudo apt-get install -y containerd
+```
+
+### Configure containerd:
+
+Check whether SystemdCgroup is set to true.
+
+```sh
+sudo containerd config dump | grep SystemdCgroup
+```
+
+If the output is not SystemdCgroup = true, run the following commands.
+
+```sh
+sudo mkdir -p /etc/containerd
+```
+```sh
+containerd config default | sudo tee /etc/containerd/config.toml > /dev/null
+```
+```sh
+sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/' /etc/containerd/config.toml
+```
+
+Enable and start containerd, then verify the active configuration.
+
+```sh
+sudo systemctl enable containerd
+sudo systemctl restart containerd
+```
+
+```sh
+sudo containerd config dump | grep SystemdCgroup
+```
+
+### Add Kubernetes repository:
+
+This guide uses Kubernetes v1.36. If you use a different Kubernetes minor version, update the repository URL accordingly.
+
+Add the repository. Adjust the version if necessary.
+
+```sh
+sudo apt-get install -y ca-certificates curl gpg
+```
+```sh
+sudo mkdir -p -m 755 /etc/apt/keyrings
+```
+```sh
+curl -fsSL https://pkgs.k8s.io/core:/stable:/v1.36/deb/Release.key | sudo gpg --dearmor -o /etc/apt/keyrings/kubernetes-apt-keyring.gpg
+```
+```sh
+echo 'deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.36/deb/ /' | sudo tee /etc/apt/sources.list.d/kubernetes.list
+```
+
+Verify that the Kubernetes repository was added successfully.
+
+```sh
+cat /etc/apt/sources.list.d/kubernetes.list
+```
+
+example: deb [signed-by=/etc/apt/keyrings/kubernetes-apt-keyring.gpg] https://pkgs.k8s.io/core:/stable:/v1.36/deb/ /
+
+Update the package index.
+
+```sh
+sudo apt update
+```
+
+### Install Kubernetes packages:
+
+```sh
+sudo apt install -y kubelet kubeadm kubectl
+```
+```sh
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+```sh
+sudo systemctl enable --now kubelet
+```
+Run the following command only on the first control-plane node.
+```sh
+sudo kubeadm init --pod-network-cidr=10.244.0.0/16
+```
+The pod network CIDR 10.244.0.0/16 is used by Flannel. Do not use a range that overlaps with your local network.
+
+After the control-plane node is initialized successfully, kubeadm displays a kubeadm join command. Save this command, as it is required to add worker nodes to the cluster. The join token expires after twenty-four hours; if it has expired, generate a new join command on the control-plane node.
+
+On the control-plane node, configure kubectl for your regular user.
+
+```sh
+mkdir -p $HOME/.kube
+```
+```sh
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+```
+```sh
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+If you are logged in as the root user, set the following environment variable instead.
+
+```sh
+export KUBECONFIG=/etc/kubernetes/admin.conf
+```
+
+example: error: error loading config file "/etc/kubernetes/admin.conf": open /etc/kubernetes/admin.conf: permission denied
+
+If you accidentally set KUBECONFIG as a regular user, you may get a permission error. Remove it with:
+
+```sh
+unset KUBECONFIG
+```
+
+### Add a worker node to the cluster:
+
+Complete all node preparation steps on the worker node before joining it to the cluster.
+
+If you saved the kubeadm join command displayed during kubeadm init, use that command on the worker node.
+
+If you no longer have the command, or if its token has expired, generate a new join command on the control-plane node:
+
+```sh
+sudo kubeadm token create --print-join-command
+```
+Copy the generated kubeadm join command and run it on the worker node to add it to the cluster.
+
+On the control-plane node or management machine, verify that the worker node joined the cluster:
+
+```sh
+kubectl get nodes
+```
+
+## Continue with networking and access
+
+Nodes may remain NotReady until the pod network is installed. Follow [Configure Kubernetes Networking](/knowledge/configure-kubernetes-networking), then [Install kubectl on macOS](/knowledge/install-kubectl-on-macos) and [Configure Kubernetes Access on macOS](/knowledge/configure-kubernetes-access-on-macos).
+

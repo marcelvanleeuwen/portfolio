@@ -1,0 +1,41 @@
+---
+title: "Reset a kubeadm Node"
+summary: "Reset a disposable Ubuntu Kubernetes node and understand which configuration kubeadm leaves behind."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+This guide is for disposable Ubuntu nodes installed with kubeadm. It does not apply to Talos/Omni. Resetting a control plane can destroy cluster state; take required backups and plan node removal before proceeding. Do not run these commands on a cluster you intend to keep.
+
+## Reset a node
+
+Run on the node you intend to reset:
+
+```bash
+sudo kubeadm reset
+```
+
+Read the confirmation prompt and any reported errors. Kubeadm performs best-effort cleanup, including local stacked-etcd member cleanup where applicable. External etcd and application data require separate handling.
+
+## Understand what remains
+
+Kubeadm does not clean the CNI configuration, user kubeconfigs, or kube-proxy's iptables, nftables, and IPVS rules. Do not flush all firewall rules: unrelated host networking can be affected. Follow the cleanup procedure for the installed CNI and kube-proxy version if needed. [Official kubeadm reset reference](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-reset/)
+
+If this node is being rebuilt and the CNI configuration is no longer needed, inspect it first:
+
+```bash
+sudo ls -la /etc/cni/net.d
+```
+
+Only after confirming that it belongs to the discarded installation, remove that configuration:
+
+```bash
+sudo rm -rf /etc/cni/net.d
+```
+
+Remove or archive only the kubeconfig for the discarded cluster. Do not delete your entire `~/.kube` directory if it contains other cluster configurations.
+
+## Rebuild or rejoin
+
+For a completely fresh lab, recreating the disposable VM can be simpler than manually deleting runtime directories and network interfaces. Otherwise, resolve reset errors and follow [the kubeadm installation guide](/knowledge/install-kubernetes-on-ubuntu-with-kubeadm) before rejoining.
+

@@ -1,0 +1,128 @@
+---
+title: "Configure Kubernetes Networking with Flannel and MetalLB"
+summary: "Add pod networking and LAN addresses for LoadBalancer services in a kubeadm homelab."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+This guide continues the [Ubuntu/kubeadm installation](/knowledge/install-kubernetes-on-ubuntu-with-kubeadm). It assumes the cluster was initialized with `10.244.0.0/16` as its pod network and has no other CNI installed. Do not install a second CNI into an existing Talos/Omni cluster without a migration plan.
+
+The Flannel URL below follows the latest release. Download and retain the manifest for a reproducible installation or removal. MetalLB is pinned to the source article's example version; check its release notes before selecting a different version. For kube-proxy in IPVS mode, configure `strictARP: true` as described in the [MetalLB installation guide](https://metallb.io/installation/).
+
+### Install the Flannel CNI plugin:
+
+Flannel is a simple CNI plugin suitable for homelabs, learning environments, and small Kubernetes clusters. For production environments, consider alternatives such as Cilium or Calico, depending on your networking and security requirements.
+
+```sh
+kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+```
+
+Verify that Flannel is running.
+
+```sh
+kubectl get nodes
+```
+
+All nodes should show the status Ready.
+
+```sh
+kubectl get pods -n kube-flannel
+```
+
+All Flannel pods should show the status Running.
+
+### Uninstall Flannel (only when intentionally removing this CNI):
+
+```sh
+kubectl delete -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+```
+
+### Install MetalLB:
+
+MetalLB is a commonly used load balancer implementation for bare-metal Kubernetes clusters. Kubernetes does not include a load balancer for bare-metal environments by default. MetalLB provides external IP addresses for Services of type LoadBalancer.
+
+```sh
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.16.1/config/manifests/metallb-native.yaml
+```
+
+Verify the installed MetalLB version.
+
+```sh
+kubectl get deployment -n metallb-system controller -o jsonpath='{.spec.template.spec.containers[0].image}'
+```
+
+Configure a MetalLB IP address pool.
+
+Choose a free IP range from your local network that is outside your DHCP pool. Replace `<YOUR_FREE_IP_RANGE>` in the manifest below before applying it.
+
+Create the file on the management machine where kubectl is configured. In this guide, the file is stored at ~/kubernetes-manifests/metallb-config.yaml.
+
+```sh
+mkdir -p ~/kubernetes-manifests
+```
+```sh
+nano ~/kubernetes-manifests/metallb-config.yaml
+```
+
+```yaml
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: lan-pool
+  namespace: metallb-system
+spec:
+  addresses:
+    - "192.168.5.220-192.168.5.229" 
+---
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: lan-advertisement
+  namespace: metallb-system
+```
+
+Example only: reserve 192.168.5.220–192.168.5.229 outside DHCP and all other allocations. Change the subnet and range for your own LAN; do not allocate an entire LAN subnet.
+
+Save the file and exit the editor before applying the configuration.
+
+```sh
+kubectl apply -f ~/kubernetes-manifests/metallb-config.yaml
+```
+
+```sh
+kubectl get ipaddresspools -n metallb-system
+```
+
+The output should show the lan-pool IP address pool. MetalLB can now assign addresses from the configured range to Services of type LoadBalancer.
+
+### Test MetalLB with an example service:
+
+Deploy a test application and expose it using a Service of type LoadBalancer:
+
+```sh
+kubectl create deployment nginx --image=nginx
+```
+```sh
+kubectl expose deployment nginx --type=LoadBalancer --port=80
+```
+
+Verify that MetalLB assigned an external IP address:
+
+```sh
+kubectl get services
+```
+
+The EXTERNAL-IP may briefly show pending; wait until it shows an address from lan-pool.
+
+The nginx service should show an EXTERNAL-IP from the IP address range configured in lan-pool.
+
+To remove the test application after verification:
+```sh
+kubectl delete service nginx
+```
+```sh
+kubectl delete deployment nginx
+```
+
+Read the [MetalLB configuration guide](https://metallb.io/configuration/) for IP pools and L2 advertisements. On a single Talos control-plane node, also review its external-load-balancer exclusion label before using MetalLB.
+

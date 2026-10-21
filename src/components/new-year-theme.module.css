@@ -1,0 +1,82 @@
+.decorations {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  --gold: #ac874b;
+  --silver: #8d969e;
+}
+:global(.dark) .decorations { --gold: #d0b37d; --silver: #b5bdc5; }
+.glow {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 260px;
+  background: radial-gradient(ellipse at 50% 0%, rgb(194 159 98 / 10%), transparent 70%);
+}
+.firework {
+  position: absolute;
+  left: 9%;
+  top: 20%;
+  width: 1px;
+  height: 1px;
+  color: var(--gold);
+}
+.firework:nth-of-type(3) { left: 91%; top: 29%; color: var(--silver); }
+.firework:nth-of-type(4) { left: 82%; top: 10%; }
+.ray {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0;
+  transform: rotate(var(--angle)) translateY(-10px);
+  animation: burst 9s ease-out var(--delay) infinite;
+}
+@keyframes burst {
+  0%, 8% { opacity: 0; transform: rotate(var(--angle)) translateY(-8px) scaleY(0.5); }
+  14% { opacity: 0.55; }
+  35%, 100% { opacity: 0; transform: rotate(var(--angle)) translateY(-65px) scaleY(0.4); }
+}
+.confetti { position: absolute; inset: 0; }
+.confetti span {
+  position: absolute;
+  top: -12px;
+  width: 3px;
+  height: 6px;
+  border-radius: 1px;
+  background: var(--gold);
+  opacity: 0;
+  animation: drift var(--duration) linear var(--delay) infinite;
+}
+.confetti span:nth-child(even) { background: var(--silver); height: 3px; }
+@keyframes drift {
+  0% { opacity: 0; transform: translate3d(0, -10px, 0) rotate(0deg); }
+  12%, 80% { opacity: 0.28; }
+  100% { opacity: 0; transform: translate3d(30px, 100dvh, 0) rotate(280deg); }
+}
+.greeting {
+  position: absolute;
+  right: clamp(20px, 4vw, 64px);
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  opacity: 0.7;
+}
+.greeting svg { width: 58px; height: 58px; }
+.greeting span { font-size: 10px; font-weight: 500; letter-spacing: 0.08em; }
+@media (max-width: 640px) {
+  .greeting { right: 12px; bottom: 104px; gap: 4px; opacity: 0.5; }
+  .greeting svg { width: 38px; height: 38px; }
+  .greeting span { font-size: 8px; }
+  .firework { left: 4%; }
+  .firework:nth-of-type(3) { left: 96%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .confetti { display: none; }
+  .ray { animation: none; opacity: 0.2; transform: rotate(var(--angle)) translateY(-30px); }
+}

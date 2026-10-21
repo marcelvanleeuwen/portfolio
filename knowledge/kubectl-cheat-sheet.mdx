@@ -1,0 +1,86 @@
+---
+title: "Kubectl Cheat Sheet"
+summary: "Common commands for contexts, workloads, troubleshooting, and port forwarding."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+Replace angle-bracket placeholders before running commands. First check your context so changes target the intended cluster.
+
+## Contexts and namespaces
+
+```bash
+kubectl config get-contexts
+kubectl config current-context
+kubectl config use-context <context>
+kubectl config set-context --current --namespace=<namespace>
+```
+
+## Inspect resources
+
+```bash
+kubectl get nodes
+kubectl get pods -A
+kubectl get pods -o wide
+kubectl get pods --watch
+kubectl get pods,deployments,services,replicasets
+kubectl get events --sort-by=.metadata.creationTimestamp
+kubectl describe pod <pod-name> -n <namespace>
+kubectl logs <pod-name> -n <namespace>
+kubectl logs <pod-name> -c <container-name> -n <namespace>
+```
+
+`kubectl get all` shows a common subset of resources, not every resource type.
+
+## Create and apply
+
+```bash
+kubectl run nginx --image=nginx
+kubectl run nginx --image=nginx --dry-run=client -o yaml > pod.yaml
+kubectl create deployment nginx --image=nginx --replicas=4
+kubectl create deployment nginx --image=nginx --replicas=4 --dry-run=client -o yaml > deployment.yaml
+kubectl apply -f deployment.yaml
+```
+
+Use reviewed image tags or digests in maintained manifests. The nginx examples are for exploration.
+
+## Scale and edit
+
+```bash
+kubectl scale deployment/nginx --replicas=2
+kubectl edit deployment nginx
+kubectl rollout status deployment/nginx
+```
+
+These changes persist in the cluster, but do not update your local YAML. A GitOps controller may reconcile them back to the desired configuration in Git.
+
+## Forward ports
+
+Keep the command running while you use the connection:
+
+```bash
+kubectl port-forward pod/<pod-name> 8080:80
+kubectl port-forward service/<service-name> 8080:80
+```
+
+## Open a container shell
+
+```bash
+kubectl exec -it <pod-name> -- sh
+kubectl exec -it <pod-name> -c <container-name> -- sh
+```
+
+Some images have bash instead, and minimal images may have no shell.
+
+## Delete resources deliberately
+
+```bash
+kubectl delete pod <pod-name>
+kubectl delete deployment nginx
+kubectl delete -f deployment.yaml
+```
+
+Deleting a controller-managed pod normally causes its controller to create a replacement. `kubectl replace --force` deletes and recreates a resource and can cause downtime; do not use it as a routine update command.
+
+See the [official kubectl reference](https://kubernetes.io/docs/reference/kubectl/) for flags and resource-specific behavior.
+

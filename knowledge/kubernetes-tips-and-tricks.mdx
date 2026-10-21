@@ -1,0 +1,50 @@
+---
+title: "Kubernetes Tips and Tricks"
+summary: "Useful kubeadm and kubectl commands for node labels, join tokens, and control-plane diagnostics."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+These notes cover kubectl and Linux clusters installed with kubeadm. The Linux static-pod paths below are not a Talos/Omni management workflow.
+
+## Add a worker role label
+
+```bash
+kubectl label node k8s-worker node-role.kubernetes.io/worker=worker --overwrite
+```
+
+Replace the node name with yours. This changes a label; it does not join the node or change its scheduling role by itself.
+
+## Generate a fresh join command
+
+Run on the kubeadm control plane:
+
+```bash
+sudo kubeadm token create --print-join-command
+```
+
+Run the resulting command on the prepared worker. Treat the bootstrap token as a credential. Use an expiring token rather than `--ttl 0`, which creates a token without expiry. [Kubeadm tokens](https://kubernetes.io/docs/reference/setup-tools/kubeadm/kubeadm-token/)
+
+## Inspect static control-plane manifests
+
+On a kubeadm control-plane node:
+
+```bash
+sudo cat /etc/kubernetes/manifests/etcd.yaml
+sudo cat /etc/kubernetes/manifests/kube-scheduler.yaml
+sudo cat /etc/kubernetes/manifests/kube-controller-manager.yaml
+```
+
+Read these files for diagnostics. Changes in this directory can restart control-plane components; avoid leaving backup manifests in it.
+
+## Check kubelet
+
+On an Ubuntu node:
+
+```bash
+sudo systemctl status kubelet
+sudo journalctl -u kubelet -n 100 --no-pager
+```
+
+For Homebrew, aliases, and completion, see [Install kubectl on macOS](/knowledge/install-kubectl-on-macos). For everyday commands, see the [kubectl cheat sheet](/knowledge/kubectl-cheat-sheet).
+

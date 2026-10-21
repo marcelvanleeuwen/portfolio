@@ -1,0 +1,39 @@
+---
+title: "Configure Kubernetes Access on macOS"
+summary: "Copy a kubeadm cluster configuration to your Mac without overwriting existing cluster access."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+This guide is for a Linux cluster with a kubeconfig available through SSH, such as the [Ubuntu/kubeadm setup](/knowledge/install-kubernetes-on-ubuntu-with-kubeadm). For Talos managed by Omni, download the configuration from Omni instead; see [the Omni guide](/knowledge/install-talos-on-proxmox-with-omni).
+
+## Before you start
+
+Install [kubectl on your Mac](/knowledge/install-kubectl-on-macos). You also need SSH access to the management host and permission to use its kubeconfig. A kubeadm admin configuration grants powerful cluster access; keep it private.
+
+## Copy the configuration
+
+Replace `admin@management-host` with your SSH user and hostname. The remote user must already have a working `~/.kube/config`.
+
+```bash
+mkdir -p "$HOME/.kube"
+scp admin@management-host:~/.kube/config "$HOME/.kube/homelab.yaml"
+chmod 600 "$HOME/.kube/homelab.yaml"
+export KUBECONFIG="$HOME/.kube/homelab.yaml"
+```
+
+This avoids overwriting an existing `~/.kube/config`. If `homelab.yaml` already exists, choose a different destination or back it up first.
+
+## Check the API address and access
+
+```bash
+kubectl config view --minify
+kubectl get nodes
+```
+
+The kubeconfig's server address must be reachable from your Mac, and its certificate must be valid for that address. A loopback address points at your Mac, not the remote server. Fix the endpoint and certificate configuration rather than disabling certificate validation.
+
+The export applies only to this terminal. Add the export line once to `~/.zshrc` if you want it in future sessions, or use `kubectl --kubeconfig "$HOME/.kube/homelab.yaml" get nodes` per command.
+
+See [Kubernetes access configuration](https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/) for contexts and multiple clusters.
+

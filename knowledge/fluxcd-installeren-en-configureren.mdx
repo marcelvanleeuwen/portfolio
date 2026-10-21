@@ -1,0 +1,273 @@
+---
+title: "Install and Configure FluxCD"
+summary: "Install FluxCD on a Talos Kubernetes cluster, connect GitHub, and manage your first configuration through Git. Includes kubeconfig setup, tokens, and troubleshooting."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+FluxCD keeps your Kubernetes cluster in sync with configuration stored in Git. Commit a Kubernetes manifest, and Flux fetches the change and applies it to the cluster. This approach is called GitOps.
+
+This guide uses a Mac, an existing Talos cluster, and a GitHub repository. The examples use `marcelvanleeuwen/k8s-cluster` and the cluster directory `clusters/homelab`. Replace these names to match your environment.
+
+## 1. Prerequisites
+
+- A working Kubernetes cluster and cluster-admin access.
+- A kubeconfig that lets your Mac connect to the cluster.
+- Homebrew and Git installed on your Mac.
+- A GitHub account with administration permissions on the repository.
+- Network access from your Mac and cluster to the required GitHub and container registry endpoints. This example uses SSH to GitHub for synchronization.
+
+Flux is installed through the Kubernetes API. You do not need to log in to a Talos node. To set up Talos and Omni first, follow [Install Talos on Proxmox with Omni](/knowledge/install-talos-on-proxmox-with-omni).
+
+## 2. Connect your Mac to Kubernetes
+
+If you downloaded `kubeconfig.yaml` from Omni, store it outside your Git repository:
+
+```bash
+mkdir -p "$HOME/.kube"
+cp "$HOME/Downloads/kubeconfig.yaml" "$HOME/.kube/homelab.yaml"
+chmod 600 "$HOME/.kube/homelab.yaml"
+export KUBECONFIG="$HOME/.kube/homelab.yaml"
+```
+
+Check connectivity and confirm the selected cluster:
+
+```bash
+kubectl config current-context
+kubectl get nodes
+```
+
+If you have multiple contexts, list them with `kubectl config get-contexts` and select the correct one with `kubectl config use-context CONTEXT_NAME`.
+
+An Omni kubeconfig may open a browser for authentication. If you see an error about a missing `oidc-login` command, install the plugin:
+
+```bash
+brew install kubelogin
+```
+
+The `export` applies to the current terminal session. Optionally add the same export line once to `~/.zshrc` to use this file in new zsh sessions. Never commit kubeconfig files or tokens to Git.
+
+## 3. Install the Flux CLI
+
+```bash
+brew install fluxcd/tap/flux
+flux --version
+flux check --pre
+```
+
+Resolve any failed checks before continuing. The precheck includes verifying that your Kubernetes version is compatible with the installed Flux version. [Flux installation](https://fluxcd.io/flux/installation/)
+
+## 4. Prepare GitHub
+
+Create a private GitHub repository named `k8s-cluster` if it does not already exist. You can also reuse an existing repository.
+
+For this workflow, create the repository first so you can explicitly limit a fine-grained token to that repository.
+
+### Create a Personal Access Token
+
+Open [GitHub → New fine-grained token](https://github.com/settings/personal-access-tokens/new).
+
+1. Give the token a name, such as **Flux bootstrap**, and choose an appropriate expiration date.
+2. Select your account as the **Resource owner**.
+3. Under **Repository access**, select only `k8s-cluster`.
+4. Set **Administration** to **Read and write**.
+5. Set **Contents** to **Read and write**. **Metadata** automatically receives read access.
+6. Click **Generate token** and copy the secret value using the copy icon.
+
+GitHub displays the secret value only immediately after creation. You can inspect or edit an existing token later, but you cannot retrieve its secret value again.
+
+With `--token-auth=false`, Flux uses the token during bootstrap to register an SSH deploy key. The cluster then uses that deploy key to read Git. The token needs administration permissions to create the key. [GitHub bootstrap and token permissions](https://fluxcd.io/flux/installation/bootstrap/github/)
+
+## 5. Bootstrap Flux
+
+Run the following command in the terminal session where you configured your kubeconfig:
+
+```bash
+flux bootstrap github \
+  --owner=marcelvanleeuwen \
+  --repository=k8s-cluster \
+  --branch=main \
+  --path=clusters/homelab \
+  --personal \
+  --token-auth=false
+```
+
+When you see `Please enter your GitHub personal access token (PAT):`, paste only the secret token value using **⌘V**, then press **Enter**. No characters appear while you paste. Do not add quotation marks or a `GITHUB_TOKEN=` prefix.
+
+| Parameter | Purpose |
+|---|---|
+| `--owner` | Owner of the GitHub repository |
+| `--repository` | Repository name without `.git` |
+| `--branch` | Branch that Flux follows |
+| `--path` | Directory inside the repository that Flux synchronizes for this cluster |
+| `--personal` | Repository belongs to a personal account; omit this for an organization |
+| `--token-auth=false` | Use an SSH deploy key for access from the cluster |
+
+`clusters/homelab` is a path inside Git, not a local directory on your Mac. It does not need to exist beforehand. For a second cluster, you could use `clusters/test`.
+
+Bootstrap commits the Flux manifests to Git, installs the controllers in `flux-system`, and configures synchronization. The repository will contain:
+
+```text
+clusters/
+└── homelab/
+    └── flux-system/
+        ├── gotk-components.yaml
+        ├── gotk-sync.yaml
+        └── kustomization.yaml
+```
+
+## 6. Verify the installation
+
+```bash
+flux check
+kubectl get pods -n flux-system
+flux get sources git
+flux get kustomizations
+```
+
+The controllers should be running, and the Git source and Flux Kustomization should eventually report `Ready=True`. If something fails, inspect the logs and events:
+
+```bash
+flux logs --level=error
+kubectl get events -n flux-system --sort-by=.lastTimestamp
+```
+
+## 7. Manage your first configuration through Git
+
+A namespace is a small example that demonstrates the complete Git-to-Kubernetes workflow without deploying an application or exposing a service.
+
+### Fetch the bootstrap files locally
+
+If you do not have a local clone yet, install and configure the GitHub CLI, then clone the repository:
+
+```bash
+brew install gh
+gh auth login --hostname github.com --git-protocol https --web
+gh auth setup-git
+gh repo clone marcelvanleeuwen/k8s-cluster
+cd k8s-cluster
+```
+
+If you already have a local clone, open that directory and fetch the bootstrap commit:
+
+```bash
+git switch main
+git pull --ff-only origin main
+```
+
+### Add a manifest and Kustomize configuration
+
+Create `clusters/homelab/demo-namespace.yaml` with:
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: gitops-demo
+  labels:
+    app.kubernetes.io/managed-by: flux
+```
+
+Also create `clusters/homelab/kustomization.yaml` with:
+
+```yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./flux-system
+  - ./demo-namespace.yaml
+```
+
+If the latter file already exists, add only `./demo-namespace.yaml` to its existing `resources` list. Keep the other resources. The `./flux-system` entry ensures that Flux continues to include its own configuration.
+
+A `kustomization.yaml` file lists the resources for Kustomize to build. The Flux resource of type `Kustomization` in `gotk-sync.yaml` controls which Git path is applied, the reconciliation interval, and whether resources removed from Git are deleted from the cluster.
+
+### Validate, commit, and synchronize
+
+Run these commands from the repository root:
+
+```bash
+kubectl kustomize ./clusters/homelab
+git add clusters/homelab/demo-namespace.yaml clusters/homelab/kustomization.yaml
+git commit -m "Add GitOps demo namespace"
+git push origin main
+flux reconcile kustomization flux-system --with-source
+kubectl get namespace gitops-demo
+```
+
+`kubectl kustomize` builds the manifests locally without applying them to the cluster. The reconcile command asks Flux to fetch and process the latest Git revision immediately. Without this command, Flux still synchronizes at its configured interval.
+
+Commit subsequent changes in the same way. Manual changes to managed resources may be reverted during the next reconciliation. With `prune: true`, removing a manifest from Git can also delete its resource from the cluster. Only remove a namespace when its contents can also be deleted. [Flux Kustomization](https://fluxcd.io/flux/components/kustomize/kustomizations/)
+
+## 8. Troubleshooting
+
+### Connection refused on localhost:8080
+
+This often indicates a missing or unselected kubeconfig:
+
+```bash
+export KUBECONFIG="$HOME/.kube/homelab.yaml"
+kubectl config current-context
+kubectl get nodes
+```
+
+Continue with bootstrap only after `kubectl` can reach your cluster.
+
+### Invalid header field value for Authorization
+
+This indicates invalid characters in the token, such as a copied newline. Copy the secret value again using the copy icon, restart bootstrap, and paste only the token at the prompt. If your shell contains an incorrect `GITHUB_TOKEN`, first remove it with `unset GITHUB_TOKEN`.
+
+### Git push returns 403 Permission denied
+
+Your Git credentials may lack repository permissions or use an outdated login. Authenticate again with the correct account:
+
+```bash
+gh auth login --hostname github.com --git-protocol https --web
+gh auth setup-git
+git push -u origin main
+```
+
+This Git login is separate from the token Flux requests during bootstrap. For a 403 during bootstrap, check that the token has access to the correct repository and the permissions listed in step 4.
+
+### Src refspec main does not match any
+
+A new local repository without commits does not yet have a branch that can be pushed. Create the first commit:
+
+```bash
+echo "# Kubernetes cluster" > README.md
+git add README.md
+git commit -m "Initial commit"
+git push -u origin main
+```
+
+This example is intended for a new, empty repository without a README. The bootstrap workflow above does not require you to initialize a local repository: Flux creates the bootstrap commit itself.
+
+### Flux pods remain Pending
+
+Inspect the pod events:
+
+```bash
+kubectl get pods -n flux-system
+kubectl describe pod POD_NAME -n flux-system
+```
+
+Check available resources and scheduling restrictions. A Talos cluster with only a control-plane node must allow workloads to run on that node. See the scheduling configuration in the [Talos guide](/knowledge/install-talos-on-proxmox-with-omni).
+
+## 9. Uninstall Flux
+
+Confirm the context and use the official uninstall command:
+
+```bash
+kubectl config current-context
+flux uninstall --namespace=flux-system
+```
+
+Confirm removal when prompted. This removes the Flux controllers, Flux custom resources, CRDs, and the `flux-system` namespace. Existing workloads and Helm releases managed by Flux remain in place, but automatic synchronization stops. Files and deploy keys on GitHub are not removed by this command. [Uninstall Flux](https://fluxcd.io/flux/installation/uninstall/)
+
+## References
+
+- [Flux: Get started](https://fluxcd.io/flux/get-started/)
+- [Flux: GitHub bootstrap](https://fluxcd.io/flux/installation/bootstrap/github/)
+- [Flux: Configure Kustomizations](https://fluxcd.io/flux/components/kustomize/kustomizations/)
+- [GitHub CLI: Authentication](https://cli.github.com/manual/gh_auth_login)
+- [Flux: Uninstall](https://fluxcd.io/flux/installation/uninstall/)

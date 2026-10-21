@@ -1,0 +1,50 @@
+---
+title: "Install kubectl on macOS"
+summary: "Install kubectl with Homebrew and configure zsh completion and a convenient alias."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+Install [Homebrew](https://brew.sh/) first if needed, including its PATH setup instructions. Then install kubectl:
+
+```bash
+brew install kubectl
+kubectl version --client
+```
+
+Keep kubectl within the Kubernetes-supported version skew of your API server. Installing the tool alone does not give it access to a cluster.
+
+## Enable zsh completion and an alias
+
+Check your shell:
+
+```bash
+echo "$SHELL"
+```
+
+For zsh, add these lines once to `~/.zshrc`:
+
+```bash
+source <(kubectl completion zsh)
+alias k=kubectl
+```
+
+Open a new terminal. If completion is not initialized by your shell setup, place these lines before the kubectl completion line:
+
+```bash
+autoload -Uz compinit
+compinit
+```
+
+Avoid initializing completion twice if your shell framework already does it.
+
+## Connect to a cluster
+
+Follow [Configure Kubernetes Access on macOS](/knowledge/configure-kubernetes-access-on-macos) for a kubeadm cluster. For Omni, download the kubeconfig from Omni and install its login plugin:
+
+```bash
+brew install kubelogin
+```
+
+See [Talos on Proxmox with Omni](/knowledge/install-talos-on-proxmox-with-omni) for that complete workflow and the [official kubectl installation guide](https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/) for alternatives.
+

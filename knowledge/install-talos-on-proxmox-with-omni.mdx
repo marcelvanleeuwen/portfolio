@@ -1,0 +1,226 @@
+---
+title: "Install Talos on Proxmox with Omni"
+summary: "Build a single-node Talos Kubernetes cluster on Proxmox with Omni, then connect from your Mac using Homebrew and kubectl."
+category: "Kubernetes"
+updatedAt: "2026-10-21"
+---
+
+This guide builds a small Kubernetes homelab with one Talos virtual machine on Proxmox. Omni manages the installation and cluster configuration. On a MacBook, we install the tools with Homebrew and connect using kubectl.
+
+The installation used Talos 1.13.10 and an existing hosted Omni account. Installing the Omni server itself is outside the scope of this guide. For other releases, select a Talos and Kubernetes combination supported by Omni; menu names and configuration fields may change.
+
+## 1. Understand the setup
+
+| Component | Purpose |
+|---|---|
+| Proxmox | Runs the virtual machine |
+| Talos Linux | Operating system for the Kubernetes node |
+| Kubernetes | Runs application workloads |
+| Omni | Manages Talos machines and the cluster lifecycle |
+| kubectl | Manages Kubernetes from your Mac |
+
+Talos is managed through an API rather than a traditional SSH session. With Omni, the machine connects to your management environment through SideroLink. [About Omni](https://docs.siderolabs.com/omni/overview/what-is-omni)
+
+A single node is useful for learning, but has no redundancy. Restarting the VM also interrupts the applications running on it.
+
+## 2. Generate installation media in Omni
+
+Open your Omni environment and start the installation media wizard.
+
+1. Select a supported Talos version.
+2. Select **amd64** for an Intel or AMD Proxmox host. This is the architecture of the VM, even if your MacBook uses Apple Silicon.
+3. Select the platform for your VM. This installation uses **NoCloud**.
+4. Select the system extensions you need.
+5. Save your choices and download the **ISO**. In this example, the filename is `nocloud-amd64.iso`.
+
+Use the image generated for your own Omni environment so the machine can register with it. [Omni Getting Started](https://omni.siderolabs.com/tutorials/getting_started)
+
+### Which extensions do you need?
+
+| Extension | When to include it |
+|---|---|
+| `siderolabs/qemu-guest-agent` | For Proxmox guest integration, including guest-agent shutdown support |
+| `siderolabs/nfs-utils` | For NFSv3 file locking |
+
+Normal NFSv4 client volumes do not require an additional NFS extension. The `nfs-utils` extension provides rpcbind and rpc.statd for NFSv3 locking. The `nfsd` extension is for NFS server functionality, rather than accessing a share on a NAS. [Official extension list](https://github.com/siderolabs/extensions)
+
+Also check the desired extensions in the machine's Omni configuration. Including an extension in the boot ISO alone is not a check that it will remain in the installed system. Manage the installed extensions through Omni. [Manage extensions in Omni](https://docs.siderolabs.com/omni/infrastructure-and-extensions/install-talos-linux-extensions)
+
+### ISO or disk image?
+
+The ISO is convenient for a manual installation through the Proxmox web interface. Upload it and attach it to the VM's virtual CD/DVD drive. A `.raw.xz` file is a compressed disk image that needs importing instead.
+
+## 3. Create the Proxmox VM
+
+Upload the ISO to storage that supports ISO images, usually **local → ISO Images → Upload**. Create a VM and attach the ISO.
+
+Use these settings as a starting point:
+
+| Setting | Value |
+|---|---|
+| Name | `k8s-cp-01` |
+| Machine | q35 |
+| BIOS | OVMF / UEFI, with an EFI disk |
+| Pre-Enroll Keys | Disabled for this setup |
+| CPU type | host |
+| CPU cores | At least 2 |
+| Memory | At least 4 GB; allow more for applications |
+| Memory ballooning | Disabled |
+| SCSI controller | VirtIO SCSI |
+| System disk | For example, 40 GB |
+| Network | VirtIO, connected to your LAN bridge |
+
+The 40 GB disk is a choice for this example, rather than an official minimum. Follow the controller guidance for your Talos release. If you included `qemu-guest-agent`, enable **VM → Options → QEMU Guest Agent** in Proxmox. [Talos Proxmox guide](https://docs.siderolabs.com/talos/v1.13/platform-specific-installations/virtualized-platforms/proxmox)
+
+Start the VM from the ISO and open its console. The Talos dashboard should display its version, IP address, and SideroLink connection. A DHCP reservation is useful for keeping the VM's address predictable.
+
+Return to **Omni → Machines**. Wait for the machine to appear as available. If it does not, check network connectivity, DNS, time synchronization, and access to your Omni endpoints. [Omni Getting Started](https://omni.siderolabs.com/tutorials/getting_started)
+
+## 4. Create the cluster
+
+In Omni:
+
+1. Open **Clusters → Create Cluster**.
+2. Enter a name, such as `homelab`.
+3. Select compatible Talos and Kubernetes versions.
+4. Assign your VM as a **control plane** machine.
+5. Check that the installation targets the intended virtual system disk. The installation writes to that disk.
+6. Create the cluster and let Omni install and bootstrap it.
+
+Omni handles this workflow. Do not also run a separate manual sequence with `talosctl gen config`, `apply-config`, and `bootstrap`. [Create an Omni cluster](https://docs.siderolabs.com/omni/getting-started/create-a-cluster)
+
+### Allow applications on the single node
+
+Control-plane nodes normally prevent ordinary application workloads from being scheduled. For this single-node Talos 1.13 setup, add a configuration patch in Omni targeting the control-plane machines:
+
+```yaml
+cluster:
+  allowSchedulingOnControlPlanes: true
+```
+
+Use **Config Patches** for the cluster, or add the patch during creation if the UI offers that option. Let Omni apply the configuration. [Enable workloads on control-plane nodes](https://docs.siderolabs.com/talos/v1.13/deploy-and-manage-workloads/workloads-on-controlplane)
+
+Wait for the cluster to become healthy. After installation, detach the ISO and make sure the VM boots from its system disk.
+
+## 5. Install the tools on your MacBook
+
+Open Terminal. If Homebrew is not installed yet, follow the instructions at [brew.sh](https://brew.sh/), including its instructions for adding brew to your PATH.
+
+Install the tools:
+
+```bash
+brew install siderolabs/tap/talosctl
+brew install kubectl
+brew install kubelogin
+```
+
+- **talosctl** manages Talos through its API. It is not required for ordinary kubectl operations.
+- **kubectl** manages Kubernetes resources.
+- **kubelogin** provides the `oidc-login` plugin used to authenticate with Omni.
+
+Check that the commands are available:
+
+```bash
+talosctl version --client
+kubectl version --client
+kubectl oidc-login --help
+```
+
+Omni also offers the `siderolabs/tap/sidero-tools` Homebrew bundle for its management tools. This guide uses the individual packages. [Omni tool installation](https://omni.siderolabs.com/how-to-guides/install-and-configure-omnictl), [kubelogin installation](https://github.com/int128/kubelogin)
+
+## 6. Download your kubeconfig
+
+Open your cluster in Omni and select **Download kubeconfig**.
+
+The commands below assume the downloaded file is called `homelab-kubeconfig.yaml`. Change that source filename to match your download:
+
+```bash
+mkdir -p "$HOME/.kube"
+cp "$HOME/Downloads/homelab-kubeconfig.yaml" "$HOME/.kube/homelab.yaml"
+chmod 600 "$HOME/.kube/homelab.yaml"
+export KUBECONFIG="$HOME/.kube/homelab.yaml"
+```
+
+This keeps the configuration outside Downloads and does not overwrite an existing `~/.kube/config`. Using an absolute path also keeps it working when you change directories.
+
+Connect to the cluster:
+
+```bash
+kubectl get nodes
+kubectl get pods -A
+```
+
+A browser window may open for authentication. Sign in with the account you use for Omni. Kubernetes requests use the endpoint and authentication configured by Omni. A healthy node should eventually show **Ready**. [Use kubectl with Omni](https://omni.siderolabs.com/how-to-guides/use-kubectl-with-omni)
+
+### Use the configuration in new Terminal windows
+
+The export only applies to the current shell. To use this cluster by default in future zsh sessions, add this line once to `~/.zshrc`:
+
+```bash
+export KUBECONFIG="$HOME/.kube/homelab.yaml"
+```
+
+Then open a new Terminal window. If you manage several clusters, you can specify the file per command instead:
+
+```bash
+kubectl --kubeconfig "$HOME/.kube/homelab.yaml" get nodes
+```
+
+## 7. Troubleshooting
+
+### Unknown command oidc-login
+
+If kubectl reports:
+
+```text
+error: unknown command "oidc-login" for "kubectl"
+```
+
+The kubeconfig is requesting an authentication plugin that is missing from your Mac. Install it and try again:
+
+```bash
+brew install kubelogin
+kubectl oidc-login --help
+kubectl get nodes
+```
+
+If the plugin is installed but still cannot be found, check your PATH:
+
+```bash
+command -v kubectl-oidc_login
+```
+
+The plugin's executable is named `kubectl-oidc_login`. [kubelogin documentation](https://github.com/int128/kubelogin)
+
+### Connection refused on Talos port 50000
+
+During this setup, a direct command to the node's LAN address returned a connection refusal:
+
+```bash
+talosctl version --insecure --nodes <node-ip>
+```
+
+On Omni-enrolled machines, the maintenance API is only reachable through SideroLink. A refused LAN connection does not by itself mean Talos is broken. Check the machine in Omni and use Omni-provided client configuration for management. [Omni and SideroLink](https://www.siderolabs.com/blog/how-talos-omni-makes-talos-linux-more-secure)
+
+### Kubeconfig stops working after changing directories
+
+A relative path is resolved from your current working directory. Set an absolute path instead:
+
+```bash
+export KUBECONFIG="$HOME/.kube/homelab.yaml"
+```
+
+### Application pods remain Pending
+
+Inspect the pod's events:
+
+```bash
+kubectl get pods -A
+kubectl describe pod <pod-name> -n <namespace>
+```
+
+On a single control-plane node, check the scheduling patch from step 4. Other possible causes include insufficient resources or missing storage. The Events section helps identify the actual cause.
+
+## Next steps
+
+You now have a Talos VM managed by Omni and a MacBook configured to access Kubernetes. NFS storage still needs separate Kubernetes configuration: selecting an extension does not create a StorageClass or PersistentVolumeClaim. Setting up a provisioner or CSI driver is a useful follow-up guide.
