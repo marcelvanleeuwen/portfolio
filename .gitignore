@@ -1,8 +1,36 @@
+# Dependencies
 node_modules/
+
+# Next.js
 .next/
 out/
+build/
+
+# Environment variables
 .env*
 !.env.example
-.DS_Store
-.content-collections
+
+# TypeScript
 *.tsbuildinfo
+
+# Generated content
+.content-collections/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Testing
+coverage/
+playwright-report/
+test-results/
