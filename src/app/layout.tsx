@@ -4,20 +4,22 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { FlickeringGrid } from "@/components/magicui/flickering-grid";
 
-const geist = Geist({
-  subsets: ["latin"],
+const geist = localFont({
+  src: "../../public/fonts/Geist-Variable.woff2",
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
+  weight: "100 900",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+const geistMono = localFont({
+  src: "../../public/fonts/GeistMono-Variable.woff2",
+  weight: "100 900",
   variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
