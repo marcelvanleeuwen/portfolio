@@ -4,7 +4,6 @@ import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 import { allPosts } from "content-collections";
-import { DATA } from "@/data/resume";
 
 export const runtime = "nodejs";
 
@@ -122,9 +121,10 @@ export default async function Image({
         const fontData = await getFontData();
         const { slug } = await params;
         const post = allPosts.find((p) => p._meta.path.replace(/\.mdx$/, "") === slug);
-        const imageUrl = DATA.avatarUrl
-            ? new URL(DATA.avatarUrl, DATA.url).toString()
-            : undefined;
+        const avatar = await readFile(
+            join(process.cwd(), "public", "images", "about", "me.jpeg")
+        );
+        const imageUrl = `data:image/jpeg;base64,${avatar.toString("base64")}`;
 
         if (!post) {
             return new ImageResponse(
@@ -134,7 +134,7 @@ export default async function Image({
                             <div style={styles.wrapper}>
                                 {imageUrl && (
                                     <div style={styles.imageSection}>
-                                        <img src={imageUrl} alt="Blog Post" style={styles.image} />
+                                        <img src={imageUrl} alt="Blog Post" width={140} height={140} style={styles.image} />
                                     </div>
                                 )}
                                 <div style={styles.mainContainer}>
@@ -178,7 +178,7 @@ export default async function Image({
                         <div style={styles.wrapper}>
                             {imageUrl && (
                                 <div style={styles.imageSection}>
-                                    <img src={imageUrl} alt={title} style={styles.image} />
+                                    <img src={imageUrl} alt={title} width={140} height={140} style={styles.image} />
                                 </div>
                             )}
                             <div style={styles.mainContainer}>

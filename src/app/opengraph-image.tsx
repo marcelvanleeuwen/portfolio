@@ -106,9 +106,10 @@ const styles = {
 export default async function Image() {
     try {
         const fontData = await getFontData();
-        const imageUrl = DATA.avatarUrl
-            ? new URL(DATA.avatarUrl, DATA.url).toString()
-            : undefined;
+        const avatar = await readFile(
+            join(process.cwd(), "public", "images", "about", "me.jpeg")
+        );
+        const imageUrl = `data:image/jpeg;base64,${avatar.toString("base64")}`;
 
         return new ImageResponse(
             (
@@ -117,7 +118,7 @@ export default async function Image() {
                         <div style={styles.wrapper}>
                             {imageUrl && (
                                 <div style={styles.imageSection}>
-                                    <img src={imageUrl} alt={DATA.name} style={styles.image} />
+                                    <img src={imageUrl} alt={DATA.name} width={140} height={140} style={styles.image} />
                                 </div>
                             )}
                             <div style={styles.mainContainer}>
