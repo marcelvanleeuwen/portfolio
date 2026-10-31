@@ -1,0 +1,89 @@
+---
+title: "AutoCAD Shortcuts and Commands Cheat Sheet"
+summary: "20 useful AutoCAD shortcuts and commands for drawing, editing, copying, navigation, and cleanup, with practical tips for everyday use."
+category: "AutoCAD"
+updatedAt: "2026-10-24"
+---
+
+Keyboard shortcuts and command aliases help you work in AutoCAD while keeping your other hand on the mouse. This cheat sheet collects the 20 shortcuts and commands covered in CAD Intentions' video, with brief explanations and a few practical notes.
+
+## How to use this cheat sheet
+
+The key combinations below follow AutoCAD for Windows. Shortcuts and aliases can differ on macOS or in a customized installation.
+
+Press key combinations such as **Ctrl + 1** together. For letter commands such as `PL`, type the letters in the command line and press **Enter**. In a sequence such as `Z`, **Enter**, `E`, **Enter**, confirm each step separately.
+
+## Open useful panels
+
+| Shortcut | Panel | What it does |
+| --- | --- | --- |
+| **Ctrl + 1** | Properties | Shows or hides the Properties palette to inspect and edit object properties. |
+| **Ctrl + 2** | DesignCenter | Opens DesignCenter to reuse content such as blocks, layers, styles, and layouts from other drawings. |
+| **Ctrl + 3** | Tool Palettes | Shows or hides tool palettes for quick access to reusable tools and content. |
+| **Ctrl + 4** | Sheet Set Manager | Opens the palette used to organize and manage drawing sheets. |
+
+## Draw, edit, and measure
+
+Type each alias below and press **Enter**.
+
+| Alias | Command | What it does |
+| --- | --- | --- |
+| `MA` | MATCHPROP | Copies properties from a source object to one or more destination objects. |
+| `PE` | PEDIT | Edits polylines, including closing them and modifying their vertices. |
+| `PL` | PLINE | Creates connected line and arc segments as a single polyline. |
+| `TR` | TRIM | Trims portions of objects at cutting boundaries. |
+| `H` | HATCH | Adds a hatch pattern or fill to an enclosed area. |
+| `DI` | DIST | Measures the distance and coordinate differences between two points. |
+| `S` | STRETCH | Stretches portions of objects selected with a crossing selection. |
+| `CO` | COPY | Creates copies of selected objects within the drawing. |
+| `RO` | ROTATE | Rotates selected objects around a base point. |
+
+For `MA`, select the object whose properties you want to copy first, then select the destination objects.
+
+For `STRETCH`, use a crossing window to select the vertices you want to move. Objects selected entirely inside the window generally move instead of stretching.
+
+The video demonstrates the older TRIM workflow with an extra **Enter** to use all objects as cutting edges. The prompts can differ depending on your AutoCAD version and trim mode; follow the command-line instructions.
+
+## Copy between drawings and work with references
+
+| Shortcut or input | Command | What it does |
+| --- | --- | --- |
+| `NC`, then select **NCOPY** from autocomplete | NCOPY | Copies nested objects from a block or external reference into the current drawing. |
+| **Ctrl + Shift + C** | COPYBASE | Copies selected objects to the clipboard using a base point you choose. |
+| **Ctrl + V** | PASTECLIP | Pastes clipboard objects at a specified insertion point. |
+| `XR`, then **Enter** | XREF | Opens the External References palette to manage linked drawings and other references. |
+
+### Keep copied geometry at the same coordinates
+
+When both drawings use the same coordinate system:
+
+1. Select the objects in the source drawing.
+2. Press **Ctrl + Shift + C**.
+3. Enter `0,0` as the base point.
+4. Switch to the destination drawing and press **Ctrl + V**.
+5. Enter `0,0` as the insertion point.
+
+This places the copied geometry at matching coordinates. Check that the drawings use compatible units and the same UCS before relying on this workflow.
+
+## Save, zoom, and clean up
+
+| Shortcut or input | Command | What it does |
+| --- | --- | --- |
+| `Q`, then select **QSAVE** from autocomplete | QSAVE | Saves the current drawing. |
+| `Z`, **Enter**, `E`, **Enter** | ZOOM Extents | Fits the drawing's objects into the current view. |
+| `PU`, then **Enter** | PURGE | Removes unused named items, such as block definitions, layers, and linetypes. |
+
+### Check autocomplete before pressing Enter
+
+The video uses `Q` and `NC` as prefixes for autocomplete. They should not be treated as guaranteed aliases for QSAVE and NCOPY. Suggestions depend on your configuration and command history.
+
+Select the intended suggestion, or type `QSAVE` or `NCOPY` in full. **Ctrl + S** is also a direct shortcut for saving.
+
+### Purge unused definitions
+
+Use `PURGE` to review unused items before removing them. It can reduce clutter and drawing size when preparing a file for handover. It does not remove duplicate geometry or replace checking the drawing itself.
+
+## Sources
+
+- [CAD Intentions: 20 Must know AutoCAD Shortcuts & Commands! AutoCAD Tips & Tricks](https://www.youtube.com/watch?v=uNCzSTOu26Y) — the original video behind this cheat sheet.
+- [Autodesk: AutoCAD keyboard commands and shortcuts guide](https://www.autodesk.com/shortcuts/autocad) — official reference for shortcuts and command aliases.
