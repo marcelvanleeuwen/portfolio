@@ -1,3 +1,5 @@
+import { PageTitle } from "@/components/page-title";
+import { NotebookIcon } from "lucide-react";
 import { allPosts } from "content-collections";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -103,12 +105,16 @@ export default async function BlogPage({
 
   return (
     <section id="blog">
-      <h1 className="mb-2 text-4xl font-semibold tracking-tight">
-        Blog{" "}
-        <span className="ml-1 bg-card border border-border rounded-md px-2 py-1 text-muted-foreground text-sm">
-          {allPosts.length} {allPosts.length === 1 ? "post" : "posts"}
-        </span>
-      </h1>
+      <PageTitle
+        icon={<NotebookIcon />}
+        badge={
+          <span className="bg-card border border-border rounded-md px-2 py-1 text-muted-foreground text-sm font-normal tracking-normal">
+            {allPosts.length} {allPosts.length === 1 ? "post" : "posts"}
+          </span>
+        }
+      >
+        Blog
+      </PageTitle>
 
       <p className="mb-8 text-sm text-muted-foreground">
         My thoughts on technology, homelabs, life, and more.

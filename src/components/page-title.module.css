@@ -1,0 +1,34 @@
+/* Keep page titles consistent inside and outside Markdown's prose styles. */
+@layer base {
+.title.title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0 0.5rem !important;
+  font-size: 1.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.025em !important;
+}
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.icon {
+  display: inline-flex;
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--muted-foreground);
+}
+
+.icon > svg {
+  width: 100%;
+  height: 100%;
+}

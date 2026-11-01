@@ -1,5 +1,7 @@
+import { PageTitle } from "@/components/page-title";
 import type { Metadata } from "next";
 import Image from "next/image";
+import { CpuIcon } from "lucide-react";
 import styles from "./hardware.module.css";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
@@ -22,10 +24,13 @@ export default async function HardwarePage() {
 
   return (
     <main>
-      <article className="prose max-w-full dark:prose-invert prose-h1:text-3xl prose-h1:font-semibold prose-h1:tracking-tight">
+      <article className="prose max-w-full dark:prose-invert">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
+            h1: ({ children }) => (
+              <PageTitle icon={<CpuIcon />}>{children}</PageTitle>
+            ),
             // Each Markdown table row becomes a product card.
             table: ({ children }) => (
               <div className="not-prose">{children}</div>

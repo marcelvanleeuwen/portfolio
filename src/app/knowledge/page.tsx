@@ -1,3 +1,5 @@
+import { PageTitle } from "@/components/page-title";
+import { BookOpenIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { allKnowledges } from "content-collections";
 import { KnowledgeIndex } from "@/components/knowledge-index";
@@ -25,12 +27,16 @@ export default async function KnowledgePage({
 
   return (
     <section>
-      <h1 className="mb-2 text-4xl font-semibold tracking-tight">
-        Knowledge{" "}
-        <span className="ml-1 bg-card border border-border rounded-md px-2 py-1 text-muted-foreground text-sm">
-          {articles.length} {articles.length === 1 ? "article" : "articles"}
-        </span>
-      </h1>
+      <PageTitle
+        icon={<BookOpenIcon />}
+        badge={
+          <span className="bg-card border border-border rounded-md px-2 py-1 text-muted-foreground text-sm font-normal tracking-normal">
+            {articles.length} {articles.length === 1 ? "article" : "articles"}
+          </span>
+        }
+      >
+        Knowledge
+      </PageTitle>
 
       <p className="mb-8 text-sm text-muted-foreground">
         Practical notes and guides from my homelab.

@@ -1,4 +1,6 @@
+import { PageTitle } from "@/components/page-title";
 import type { Metadata } from "next";
+import { Server } from "lucide-react";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import Markdown from "react-markdown";
@@ -24,6 +26,9 @@ export default async function HomelabPage() {
       <article className="prose max-w-full dark:prose-invert">
         <Markdown
           components={{
+            h1: ({ children }) => (
+              <PageTitle icon={<Server />}>{children}</PageTitle>
+            ),
             ul: ({ children }) => (
               <ul className={`not-prose ${styles.collage}`}>{children}</ul>
             ),
