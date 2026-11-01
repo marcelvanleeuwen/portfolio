@@ -22,7 +22,7 @@ Moving indoors has worked well. The heat from the racks now helps warm the house
 
 Today, I use Minisforum systems running Proxmox, with UniFi equipment for networking and storage. I keep the full equipment list on the [hardware page](/hardware).
 
-This is still a production homelab. It runs my daily services and FluxNodes, so keeping it working matters to me. I also use it to learn, test changes, and work on new projects. I share updates on my [blog](/blog) and keep practical notes in the [wiki](/knowledge).
+This is still a production homelab. It runs my daily services and [FluxNodes](/flux), so keeping it working matters to me. I also use it to learn, test changes, and work on new projects. I share updates on my [blog](/blog) and keep practical notes in the [wiki](/knowledge).
 
 ## Rack photos
 

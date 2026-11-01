@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { FluxIcon } from "@/components/flux-logo";
 import { BookOpenIcon, HomeIcon, NotebookIcon, Server, CpuIcon } from "lucide-react";
 import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
@@ -40,6 +41,7 @@ export const DATA = {
     { href: "/knowledge", icon: BookOpenIcon, label: "Knowledge" },
     { href: "/homelab", icon: Server, label: "Homelab" },
     { href: "/hardware", icon: CpuIcon, label: "Hardware" },
+    { href: "/flux", icon: FluxIcon, label: "RunOnFlux" },
   ],
   contact: {
     email: "info@thehomelabber.io",

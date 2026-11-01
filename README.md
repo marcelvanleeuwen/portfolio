@@ -51,6 +51,7 @@ Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Magic UI, and Motion. Blog 
 - Edit the About text on the homepage in `content/pages/about.md`.
 - Edit the hardware page in `content/pages/hardware.md`.
 - Edit the homelab story and photo list in `content/pages/homelab.md`.
+- Edit the RunOnFlux page in `content/pages/flux.md`.
 - Keep Markdown content for standalone pages in `content/pages/`.
 - Store images and other public files in `public/`.
 
@@ -60,4 +61,4 @@ The website source code uses the [MIT License](./LICENSE). The original copyrigh
 
 Original articles, guides, and personal photos are © 2026 Marcel van Leeuwen. They are not covered by the MIT license. All rights reserved, subject to applicable legal exceptions. Please contact me if you would like permission to reuse them.
 
-Product photos and trademarks belong to their respective owners, including Ubiquiti and Minisforum. They are not covered by the website's MIT license or my copyright notice. Image sources are listed in [public/images/hardware/sources.json](./public/images/hardware/sources.json). Source credits do not grant permission to reuse these images.
+Product photos and trademarks belong to their respective owners, including Ubiquiti and Minisforum. The Flux logo belongs to its owner; its source is recorded in [public/images/flux/sources.json](./public/images/flux/sources.json). They are not covered by the website's MIT license or my copyright notice. Image sources are listed in [public/images/hardware/sources.json](./public/images/hardware/sources.json). Source credits do not grant permission to reuse these images.
