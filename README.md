@@ -50,6 +50,7 @@ Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Magic UI, and Motion. Blog 
 - Add or edit knowledge articles in `content/knowledge/`.
 - Edit the About text on the homepage in `content/pages/about.md`.
 - Edit the hardware page in `content/pages/hardware.md`.
+- Edit the homelab story and photo list in `content/pages/homelab.md`.
 - Keep Markdown content for standalone pages in `content/pages/`.
 - Store images and other public files in `public/`.
 

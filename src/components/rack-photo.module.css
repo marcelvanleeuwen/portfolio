@@ -1,0 +1,112 @@
+.photo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--card);
+  color: var(--foreground);
+  cursor: zoom-in;
+}
+
+.photo:hover { border-color: var(--ring); }
+
+.photo:focus-visible, .close:focus-visible, .original:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+}
+
+.thumbnail {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 11rem;
+  flex: 1;
+  aspect-ratio: 3 / 4;
+  background: var(--muted);
+}
+
+.image { object-fit: contain; }
+
+.expand {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: grid;
+  place-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 999px;
+  background: rgb(0 0 0 / 65%);
+  color: white;
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem;
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.caption strong { font-size: 1rem; }
+.caption > span { color: var(--muted-foreground); }
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(95vw, 80rem);
+  max-width: 95vw;
+  max-height: 95dvh;
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.dialog::backdrop { background: rgb(0 0 0 / 85%); }
+
+.viewer { padding: 1rem; }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.header h2 { margin: 0; font-size: 1rem; font-weight: 600; }
+
+.close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  background: var(--muted);
+  cursor: pointer;
+}
+
+.fullPhoto { position: relative; height: 75dvh; }
+
+.original {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+@media (max-width: 639px) {
+  .fullPhoto { height: 65dvh; }
+}
