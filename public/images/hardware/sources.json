@@ -40,5 +40,46 @@
     "productPage": "https://www.minisforum.com/products/minisforum-ms-01",
     "originalImage": "https://www.minisforum.com/cdn/shop/files/000ahwsa_asm0721.542_1200x1200.png?v=1736407742",
     "credit": "Minisforum"
+  },
+  {
+    "file": "silverstone-rcp2b-480.jpg",
+    "productPage": "https://www.newegg.com/p/2BA-00BY-00004",
+    "originalImage": "https://c1.neweggimages.com/productimage/nb640/B7VES2503110PBNQ42C.jpg",
+    "credit": "SilverStone product image via Newegg"
+  },
+  {
+    "file": "extralink-shelf-350mm.webp",
+    "productPage": "https://www.amazon.nl/dp/B09X78G288",
+    "manufacturerPage": "https://www.extralink24.com/produkt/extralink-1u-350mm-czarna-polka-19-do-szaf-wiszacych_dnxgfnkskrmngn/",
+    "originalImage": "https://www.batna24.com/678315-zoom/extralink-1u-350mm-black-shelf-19-for-wall-cabinets.webp",
+    "credit": "Extralink / Batna24"
+  },
+  {
+    "file": "crucial-32gb-ddr5.jpg",
+    "productPage": "https://www.amazon.nl/dp/B0BLTDRRLF",
+    "originalImage": "https://m.media-amazon.com/images/I/61O5IUjSDSL.jpg",
+    "credit": "Crucial / Micron product image via Amazon",
+    "imageType": "Generic Crucial DDR5 SO-DIMM product image"
+  },
+  {
+    "file": "crucial-48gb-ddr5.jpg",
+    "productPage": "https://www.amazon.nl/dp/B0C79K5VGZ",
+    "kitPartNumber": "CT2K48G56C46S5",
+    "originalImage": "https://m.media-amazon.com/images/I/61u%2BioPoR1L.jpg",
+    "credit": "Crucial / Micron product image via Amazon"
+  },
+  {
+    "file": "seagate-exos-x22-22tb.png",
+    "productPage": "https://tweakers.net/pricewatch/1937676/seagate-exos-x22-sata-standard-model-22tb.html",
+    "manufacturerPage": "https://www.seagate.com/nl/nl/support/internal-hard-drives/enterprise-hard-drives/exos-X22/",
+    "originalImage": "https://www.seagate.com/content/dam/seagate/assets/support/internal-hard-drive/enterprise-hard-drives/exos-x22/_shared/images/exos-x22-270x270.png/_jcr_content/renditions/1-1-large-640x640.png",
+    "credit": "Seagate"
+  },
+  {
+    "file": "samsung-980-1tb.png",
+    "productPage": "https://www.bol.com/nl/nl/p/samsung-980-m-2-interne-ssd-nvme-1tb/9300000025354350/",
+    "manufacturerPage": "https://www.samsung.com/uk/memory-storage/nvme-ssd/980-1tb-nvme-pcie-gen-3-mz-v8v1t0bw/",
+    "originalImage": "https://images.samsung.com/is/image/samsung/p6pim/uk/mz-v8v1t0bw/gallery/uk-980-nvme-m2-ssd-mz-v8v1t0bw-399698721?$1164_776_PNG$",
+    "credit": "Samsung"
   }
 ]

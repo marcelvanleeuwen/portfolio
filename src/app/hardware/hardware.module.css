@@ -106,3 +106,24 @@
   object-position: center 65%;
   padding: 0.75rem;
 }
+
+.imageFrame:has(.image[alt="SilverStone SST-RCP2B-480"]) {
+  background: white;
+}
+
+.imageFrame:has(.image[alt="Extralink 1U rack shelf"]) {
+  background: white;
+}
+
+.imageFrame:has(.image[src*="crucial-"]),
+.image[src*="crucial-"] {
+  background-color: #fff;
+}
+
+.imageFrame:has(.image[alt="Seagate Exos X22 22 TB"]) {
+  background: white;
+}
+
+.imageFrame:has(.image[alt="Samsung 980 NVMe 1 TB"]) {
+  background: white;
+}
