@@ -1,0 +1,108 @@
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--card);
+}
+
+.card > div:first-child {
+  grid-column: 1 / -1;
+}
+
+.imageFrame {
+  position: relative;
+  display: block;
+  height: 11rem;
+  overflow: hidden;
+  border-radius: 0.625rem;
+  background: #f6f7f9;
+}
+
+.image {
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.card > div:nth-child(2) {
+  align-self: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.card > div:nth-child(2) a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.card > div:nth-child(2) a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.card a:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.card > div:nth-child(3) {
+  align-self: center;
+  border-radius: 999px;
+  padding: 0.125rem 0.5rem;
+  background: var(--muted);
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+.card > div:nth-child(4) {
+  grid-column: 1 / -1;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+@media (min-width: 640px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.image[alt="UDM SE"],
+.image[alt="UNAS Pro"],
+.image[alt="UPS 2U"],
+.image[alt="USW Aggregation"] {
+  object-fit: cover;
+  padding: 0.75rem;
+}
+
+.image[alt="G4 Instant"] {
+  object-fit: cover;
+  transform: scale(1.5);
+}
+
+.imageFrame:has(.image[alt="Minisforum MS-01"]) {
+  background: white;
+}
+
+.image[alt="Minisforum MS-01"] {
+  object-fit: cover;
+  object-position: center 65%;
+  padding: 0.75rem;
+}

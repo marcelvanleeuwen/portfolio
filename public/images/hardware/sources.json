@@ -1,0 +1,44 @@
+[
+  {
+    "file": "udm-se.webp",
+    "productPage": "https://eu.store.ui.com/eu/en/products/udm-se",
+    "originalImage": "https://cdn.ecomm.ui.com/products/1b6fcc08-a6b8-4496-a831-6125a47c412f/1aaaac38-597b-4125-b0de-7a2671580b21.png",
+    "credit": "Ubiquiti"
+  },
+  {
+    "file": "unas-pro.webp",
+    "productPage": "https://eu.store.ui.com/eu/en/products/unas-pro",
+    "originalImage": "https://cdn.ecomm.ui.com/products/c73f5f36-f1af-4eb2-bf44-8a9f31eb3e3b/26cb92f6-4e46-4da6-945d-9f8e2f8a283b.png",
+    "credit": "Ubiquiti"
+  },
+  {
+    "file": "ups-2u.webp",
+    "productPage": "https://eu.store.ui.com/eu/en/products/ups-2u-eu",
+    "originalImage": "https://cdn.ecomm.ui.com/products/8626e3df-7aad-47f3-b297-24e97530a448/5b4c402e-93b0-4fff-af35-05cc62a722b8.png",
+    "credit": "Ubiquiti"
+  },
+  {
+    "file": "usw-aggregation.webp",
+    "productPage": "https://eu.store.ui.com/eu/en/products/usw-aggregation",
+    "originalImage": "https://cdn.ecomm.ui.com/products/1c748fb1-b4df-43ef-83e0-d5ed26f9db7c/b06fde87-241d-4b4e-8319-8d7d29f6f6c2.png",
+    "credit": "Ubiquiti"
+  },
+  {
+    "file": "u6-pro.webp",
+    "productPage": "https://eu.store.ui.com/eu/en/products/u6-pro",
+    "originalImage": "https://cdn.ecomm.ui.com/products/8e88b222-7a55-4cf0-8677-ae9b6347fe84/e16aa122-b5e5-4ffb-9f1a-27ee14d9ab3d.png",
+    "credit": "Ubiquiti"
+  },
+  {
+    "file": "g4-instant.webp",
+    "productPage": "https://eu.store.ui.com/eu/en/products/camera-g4-instant",
+    "originalImage": "https://cdn.ecomm.ui.com/products/45dbdf62-8b0c-4283-aeb9-34d8597e0154/48d5f7c7-c1dc-4118-80ce-c9e226a36d04.png",
+    "credit": "Ubiquiti"
+  },
+  {
+    "file": "minisforum-ms-01.png",
+    "productPage": "https://www.minisforum.com/products/minisforum-ms-01",
+    "originalImage": "https://www.minisforum.com/cdn/shop/files/000ahwsa_asm0721.542_1200x1200.png?v=1736407742",
+    "credit": "Minisforum"
+  }
+]
