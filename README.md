@@ -56,4 +56,8 @@ Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Magic UI, and Motion. Blog 
 
 ## License
 
-This project uses the [MIT License](./LICENSE). The original copyright notice for Dillion Verma is kept in the license file.
+The website source code uses the [MIT License](./LICENSE). The original copyright notice for Dillion Verma is kept in the license file. Third-party libraries retain their own licenses.
+
+Original articles, guides, and personal photos are © 2026 Marcel van Leeuwen. They are not covered by the MIT license. All rights reserved, subject to applicable legal exceptions. Please contact me if you would like permission to reuse them.
+
+Product photos and trademarks belong to their respective owners, including Ubiquiti and Minisforum. They are not covered by the website's MIT license or my copyright notice. Image sources are listed in [public/images/hardware/sources.json](./public/images/hardware/sources.json). Source credits do not grant permission to reuse these images.
