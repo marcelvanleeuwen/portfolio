@@ -46,8 +46,8 @@ Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, Magic UI, and Motion. Blog 
 ## Make changes
 
 - Edit `src/data/resume.tsx` to change personal information and menu items.
-- Add or edit blog posts in `content/`.
-- Add or edit knowledge articles in `knowledge/`.
+- Add or edit blog posts in `content/blog/`.
+- Add or edit knowledge articles in `content/knowledge/`.
 - Store images and other public files in `public/`.
 
 ## License
