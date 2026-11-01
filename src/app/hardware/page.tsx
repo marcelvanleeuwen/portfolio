@@ -11,7 +11,7 @@ import remarkGfm from "remark-gfm";
 export const metadata: Metadata = {
   title: "Hardware",
   description:
-    "The hardware in my homelab: UDM SE, UNAS Pro, UPS 2U, USW Aggregation, two U6 Pro access points, a G4 Instant camera, and four Minisforum MS-01 Proxmox nodes.",
+    "The hardware in my homelab: UDM SE, UNAS Pro, UPS 2U, USW Aggregation, two U6 Pro access points, a G4 Instant camera, four Minisforum MS-01 Proxmox nodes, and two SilverStone cooling panels.",
 };
 
 export const dynamic = "force-static";
