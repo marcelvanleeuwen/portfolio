@@ -5,6 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import ContactSection from "@/components/section/contact-section";
 import HackathonsSection from "@/components/section/hackathons-section";
 import ProjectsSection from "@/components/section/projects-section";
@@ -18,7 +20,12 @@ import { NewYearTheme } from "@/components/new-year-theme";
 const BLUR_FADE_DELAY = 0.04;
 const SHOW_CHRISTMAS_THEME = CHRISTMAS_THEME_ENABLED && !NEW_YEAR_THEME_ENABLED;
 
-export default function Page() {
+export default async function Page() {
+  const about = await readFile(
+    path.join(process.cwd(), "content", "pages", "about.md"),
+    "utf8"
+  );
+
   return (
     <main className="min-h-dvh flex flex-col gap-14 relative">
       {SHOW_CHRISTMAS_THEME && <ChristmasTheme />}
@@ -59,7 +66,7 @@ export default function Page() {
           <BlurFade delay={BLUR_FADE_DELAY * 4}>
             <div className="prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
               <Markdown>
-                {DATA.summary}
+                {about}
               </Markdown>
             </div>
           </BlurFade>
