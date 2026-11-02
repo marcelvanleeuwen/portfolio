@@ -26,7 +26,7 @@ The official [FluxNode documentation](https://docs.runonflux.com/fluxnodes/what-
 
 ## Why I run FluxNodes
 
-I like working with servers, Linux, networking, and containers. Running FluxNodes lets me use those skills to support a network that hosts other people's applications.
+I'm a fan of the RunOnFlux project. I've always enjoyed system administration: working with servers, Linux, networking, and containers. Running FluxNodes gives me a chance to take on that role and put those skills to use, while supporting a network that hosts other people's applications.
 
 My nodes are part of my production setup. Keeping them online, checking their status, and looking after the systems is part of managing my homelab. I enjoy the practical side of it: setting things up, solving problems, and learning how the different parts work together.
 
